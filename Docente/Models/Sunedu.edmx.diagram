@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6e2829e31fa54ecbac31498db39742ee" Name="Diagram1">
+        <EntityTypeShape EntityType="SUNEDUModel.ACCESO" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Autorizacion" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.BOLSA_TRABAJO" Width="1.5" PointX="15" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Carrera" Width="1.5" PointX="10.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Categoria" Width="1.5" PointX="15.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Categoria_Docentes" Width="1.5" PointX="18" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.CategoriaXCarrera" Width="1.5" PointX="13" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.DOCENTE" Width="1.5" PointX="8" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.DocenteXSede" Width="1.5" PointX="2.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Documento_Bolsa" Width="1.5" PointX="12.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Documento_Servicio" Width="1.5" PointX="13.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Documento_Transparencia" Width="1.5" PointX="2.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Documentos_Docente" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Documentos_Investigacion" Width="1.5" PointX="5.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Documentos_Universidad" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.FINANZAS" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Grado" Width="1.5" PointX="10.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Grado_Docente" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.INVESTIGACION" Width="1.5" PointX="8" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.InvestigacionXDocente" Width="1.5" PointX="7.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Localidad" Width="1.5" PointX="7.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Modalidad_Creacion" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Periodo_Academico" Width="1.5" PointX="13.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.PROGRAMA" Width="1.5" PointX="16" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.ProgramasXCarrera" Width="1.5" PointX="13" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.ProgramaXSede" Width="1.5" PointX="15.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Proyectos" Width="1.5" PointX="5.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.SEDE" Width="1.5" PointX="10" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.SERVICIOS_COMPLEMENTARIOS" Width="1.5" PointX="16" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Tip_Grado" Width="1.5" PointX="11" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Tipo_Categoria" Width="1.5" PointX="10.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.Tipo_Docente" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.TipoGestion" Width="1.5" PointX="0.75" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.TRANSPARENCIA" Width="1.5" PointX="5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUNEDUModel.UNIVERSIDAD" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="SUNEDUModel.FK__UNIVERSID__id_Ac__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__UNIVERSID__id_Au__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__BOLSA_TRA__id_Do__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__Categoria__id_Ca__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__Programas__id_Ca__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__Categoria__id_Ca__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__Categoria__id_Ti__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__DOCENTE__id_Docu__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__DOCENTE__id_TipD__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__SERVICIOS__id_Do__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__TRANSPARE__id_Do__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__INVESTIGA__id_Do__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__UNIVERSID__id_Do__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__UNIVERSID__id_Fi__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__Tip_Grado__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__INVESTIGA__Id_Pr__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__SEDE__id_localid__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__UNIVERSID__id_Mo__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__PROGRAMA__id_Per__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__Tip_Grado__id_Ti__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="SUNEDUModel.FK__UNIVERSID__id_Ge__628FA481" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

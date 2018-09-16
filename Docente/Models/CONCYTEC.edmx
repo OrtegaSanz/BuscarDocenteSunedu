@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CONCYTECModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DOCENTES_CONCYTEC">
+          <Key>
+            <PropertyRef Name="id_DocConcytec" />
+          </Key>
+          <Property Name="id_DocConcytec" Type="int" Nullable="false" />
+          <Property Name="Nombres" Type="varchar" MaxLength="225" />
+          <Property Name="ApellidoPaterno" Type="varchar" MaxLength="225" />
+          <Property Name="ApellidoMaterno" Type="varchar" MaxLength="225" />
+          <Property Name="Nacionalidad" Type="varchar" MaxLength="225" />
+          <Property Name="DNI_Carnet" Type="varchar" MaxLength="225" />
+          <Property Name="id_TipDocCon" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Experiencia">
+          <Key>
+            <PropertyRef Name="id_Experiencia" />
+          </Key>
+          <Property Name="id_Experiencia" Type="int" Nullable="false" />
+          <Property Name="DescripcionExp" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <EntityType Name="ExperienciaXDocente">
+          <Key>
+            <PropertyRef Name="id_DocConcytec" />
+            <PropertyRef Name="id_Experiencia" />
+          </Key>
+          <Property Name="id_DocConcytec" Type="int" Nullable="false" />
+          <Property Name="id_Experiencia" Type="int" Nullable="false" />
+          <Property Name="Experiencia1" Type="varchar" MaxLength="225" />
+          <Property Name="Experiencia2" Type="varchar" MaxLength="225" />
+          <Property Name="Experiencia3" Type="varchar" MaxLength="225" />
+          <Property Name="Experiencia4" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <EntityType Name="Tipo_DocConcytec">
+          <Key>
+            <PropertyRef Name="id_TipDocCon" />
+          </Key>
+          <Property Name="id_TipDocCon" Type="int" Nullable="false" />
+          <Property Name="DescripcionTipCon" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <Association Name="FK__DOCENTES___id_Ti__29572725">
+          <End Role="Tipo_DocConcytec" Type="Self.Tipo_DocConcytec" Multiplicity="1" />
+          <End Role="DOCENTES_CONCYTEC" Type="Self.DOCENTES_CONCYTEC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_DocConcytec">
+              <PropertyRef Name="id_TipDocCon" />
+            </Principal>
+            <Dependent Role="DOCENTES_CONCYTEC">
+              <PropertyRef Name="id_TipDocCon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Experienc__id_Do__2A4B4B5E">
+          <End Role="DOCENTES_CONCYTEC" Type="Self.DOCENTES_CONCYTEC" Multiplicity="1" />
+          <End Role="ExperienciaXDocente" Type="Self.ExperienciaXDocente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCENTES_CONCYTEC">
+              <PropertyRef Name="id_DocConcytec" />
+            </Principal>
+            <Dependent Role="ExperienciaXDocente">
+              <PropertyRef Name="id_DocConcytec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Experienc__id_Ex__2B3F6F97">
+          <End Role="Experiencia" Type="Self.Experiencia" Multiplicity="1" />
+          <End Role="ExperienciaXDocente" Type="Self.ExperienciaXDocente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Experiencia">
+              <PropertyRef Name="id_Experiencia" />
+            </Principal>
+            <Dependent Role="ExperienciaXDocente">
+              <PropertyRef Name="id_Experiencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CONCYTECModelStoreContainer">
+          <EntitySet Name="DOCENTES_CONCYTEC" EntityType="Self.DOCENTES_CONCYTEC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Experiencia" EntityType="Self.Experiencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExperienciaXDocente" EntityType="Self.ExperienciaXDocente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipo_DocConcytec" EntityType="Self.Tipo_DocConcytec" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__DOCENTES___id_Ti__29572725" Association="Self.FK__DOCENTES___id_Ti__29572725">
+            <End Role="Tipo_DocConcytec" EntitySet="Tipo_DocConcytec" />
+            <End Role="DOCENTES_CONCYTEC" EntitySet="DOCENTES_CONCYTEC" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Experienc__id_Do__2A4B4B5E" Association="Self.FK__Experienc__id_Do__2A4B4B5E">
+            <End Role="DOCENTES_CONCYTEC" EntitySet="DOCENTES_CONCYTEC" />
+            <End Role="ExperienciaXDocente" EntitySet="ExperienciaXDocente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Experienc__id_Ex__2B3F6F97" Association="Self.FK__Experienc__id_Ex__2B3F6F97">
+            <End Role="Experiencia" EntitySet="Experiencia" />
+            <End Role="ExperienciaXDocente" EntitySet="ExperienciaXDocente" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CONCYTECModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DOCENTES_CONCYTEC">
+          <Key>
+            <PropertyRef Name="id_DocConcytec" />
+          </Key>
+          <Property Name="id_DocConcytec" Type="Int32" Nullable="false" />
+          <Property Name="Nombres" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoPaterno" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoMaterno" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Nacionalidad" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="DNI_Carnet" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="id_TipDocCon" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Tipo_DocConcytec" Relationship="Self.FK__DOCENTES___id_Ti__29572725" FromRole="DOCENTES_CONCYTEC" ToRole="Tipo_DocConcytec" />
+          <NavigationProperty Name="ExperienciaXDocente" Relationship="Self.FK__Experienc__id_Do__2A4B4B5E" FromRole="DOCENTES_CONCYTEC" ToRole="ExperienciaXDocente" />
+        </EntityType>
+        <EntityType Name="Experiencia">
+          <Key>
+            <PropertyRef Name="id_Experiencia" />
+          </Key>
+          <Property Name="id_Experiencia" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionExp" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ExperienciaXDocente" Relationship="Self.FK__Experienc__id_Ex__2B3F6F97" FromRole="Experiencia" ToRole="ExperienciaXDocente" />
+        </EntityType>
+        <EntityType Name="ExperienciaXDocente">
+          <Key>
+            <PropertyRef Name="id_DocConcytec" />
+            <PropertyRef Name="id_Experiencia" />
+          </Key>
+          <Property Name="id_DocConcytec" Type="Int32" Nullable="false" />
+          <Property Name="id_Experiencia" Type="Int32" Nullable="false" />
+          <Property Name="Experiencia1" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Experiencia2" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Experiencia3" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Experiencia4" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DOCENTES_CONCYTEC" Relationship="Self.FK__Experienc__id_Do__2A4B4B5E" FromRole="ExperienciaXDocente" ToRole="DOCENTES_CONCYTEC" />
+          <NavigationProperty Name="Experiencia" Relationship="Self.FK__Experienc__id_Ex__2B3F6F97" FromRole="ExperienciaXDocente" ToRole="Experiencia" />
+        </EntityType>
+        <EntityType Name="Tipo_DocConcytec">
+          <Key>
+            <PropertyRef Name="id_TipDocCon" />
+          </Key>
+          <Property Name="id_TipDocCon" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionTipCon" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DOCENTES_CONCYTEC" Relationship="Self.FK__DOCENTES___id_Ti__29572725" FromRole="Tipo_DocConcytec" ToRole="DOCENTES_CONCYTEC" />
+        </EntityType>
+        <Association Name="FK__DOCENTES___id_Ti__29572725">
+          <End Role="Tipo_DocConcytec" Type="Self.Tipo_DocConcytec" Multiplicity="1" />
+          <End Role="DOCENTES_CONCYTEC" Type="Self.DOCENTES_CONCYTEC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_DocConcytec">
+              <PropertyRef Name="id_TipDocCon" />
+            </Principal>
+            <Dependent Role="DOCENTES_CONCYTEC">
+              <PropertyRef Name="id_TipDocCon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Experienc__id_Do__2A4B4B5E">
+          <End Role="DOCENTES_CONCYTEC" Type="Self.DOCENTES_CONCYTEC" Multiplicity="1" />
+          <End Role="ExperienciaXDocente" Type="Self.ExperienciaXDocente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCENTES_CONCYTEC">
+              <PropertyRef Name="id_DocConcytec" />
+            </Principal>
+            <Dependent Role="ExperienciaXDocente">
+              <PropertyRef Name="id_DocConcytec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Experienc__id_Ex__2B3F6F97">
+          <End Role="Experiencia" Type="Self.Experiencia" Multiplicity="1" />
+          <End Role="ExperienciaXDocente" Type="Self.ExperienciaXDocente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Experiencia">
+              <PropertyRef Name="id_Experiencia" />
+            </Principal>
+            <Dependent Role="ExperienciaXDocente">
+              <PropertyRef Name="id_Experiencia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Concytec" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DOCENTES_CONCYTEC" EntityType="Self.DOCENTES_CONCYTEC" />
+          <EntitySet Name="Experiencia" EntityType="Self.Experiencia" />
+          <EntitySet Name="ExperienciaXDocente" EntityType="Self.ExperienciaXDocente" />
+          <EntitySet Name="Tipo_DocConcytec" EntityType="Self.Tipo_DocConcytec" />
+          <AssociationSet Name="FK__DOCENTES___id_Ti__29572725" Association="Self.FK__DOCENTES___id_Ti__29572725">
+            <End Role="Tipo_DocConcytec" EntitySet="Tipo_DocConcytec" />
+            <End Role="DOCENTES_CONCYTEC" EntitySet="DOCENTES_CONCYTEC" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Experienc__id_Do__2A4B4B5E" Association="Self.FK__Experienc__id_Do__2A4B4B5E">
+            <End Role="DOCENTES_CONCYTEC" EntitySet="DOCENTES_CONCYTEC" />
+            <End Role="ExperienciaXDocente" EntitySet="ExperienciaXDocente" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Experienc__id_Ex__2B3F6F97" Association="Self.FK__Experienc__id_Ex__2B3F6F97">
+            <End Role="Experiencia" EntitySet="Experiencia" />
+            <End Role="ExperienciaXDocente" EntitySet="ExperienciaXDocente" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CONCYTECModelStoreContainer" CdmEntityContainer="Concytec">
+          <EntitySetMapping Name="DOCENTES_CONCYTEC">
+            <EntityTypeMapping TypeName="CONCYTECModel.DOCENTES_CONCYTEC">
+              <MappingFragment StoreEntitySet="DOCENTES_CONCYTEC">
+                <ScalarProperty Name="id_DocConcytec" ColumnName="id_DocConcytec" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="DNI_Carnet" ColumnName="DNI_Carnet" />
+                <ScalarProperty Name="id_TipDocCon" ColumnName="id_TipDocCon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Experiencia">
+            <EntityTypeMapping TypeName="CONCYTECModel.Experiencia">
+              <MappingFragment StoreEntitySet="Experiencia">
+                <ScalarProperty Name="id_Experiencia" ColumnName="id_Experiencia" />
+                <ScalarProperty Name="DescripcionExp" ColumnName="DescripcionExp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExperienciaXDocente">
+            <EntityTypeMapping TypeName="CONCYTECModel.ExperienciaXDocente">
+              <MappingFragment StoreEntitySet="ExperienciaXDocente">
+                <ScalarProperty Name="id_DocConcytec" ColumnName="id_DocConcytec" />
+                <ScalarProperty Name="id_Experiencia" ColumnName="id_Experiencia" />
+                <ScalarProperty Name="Experiencia1" ColumnName="Experiencia1" />
+                <ScalarProperty Name="Experiencia2" ColumnName="Experiencia2" />
+                <ScalarProperty Name="Experiencia3" ColumnName="Experiencia3" />
+                <ScalarProperty Name="Experiencia4" ColumnName="Experiencia4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_DocConcytec">
+            <EntityTypeMapping TypeName="CONCYTECModel.Tipo_DocConcytec">
+              <MappingFragment StoreEntitySet="Tipo_DocConcytec">
+                <ScalarProperty Name="id_TipDocCon" ColumnName="id_TipDocCon" />
+                <ScalarProperty Name="DescripcionTipCon" ColumnName="DescripcionTipCon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CONCYTECModelStoreContainer" CdmEntityContainer="Concytec">
+    <EntitySetMapping Name="DOCENTES_CONCYTEC">
+      <EntityTypeMapping TypeName="CONCYTECModel.DOCENTES_CONCYTEC">
+        <MappingFragment StoreEntitySet="DOCENTES_CONCYTEC">
+          <ScalarProperty Name="id_DocConcytec" ColumnName="id_DocConcytec" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="DNI_Carnet" ColumnName="DNI_Carnet" />
+          <ScalarProperty Name="id_TipDocCon" ColumnName="id_TipDocCon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Experiencia">
+      <EntityTypeMapping TypeName="CONCYTECModel.Experiencia">
+        <MappingFragment StoreEntitySet="Experiencia">
+          <ScalarProperty Name="id_Experiencia" ColumnName="id_Experiencia" />
+          <ScalarProperty Name="DescripcionExp" ColumnName="DescripcionExp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExperienciaXDocente">
+      <EntityTypeMapping TypeName="CONCYTECModel.ExperienciaXDocente">
+        <MappingFragment StoreEntitySet="ExperienciaXDocente">
+          <ScalarProperty Name="id_DocConcytec" ColumnName="id_DocConcytec" />
+          <ScalarProperty Name="id_Experiencia" ColumnName="id_Experiencia" />
+          <ScalarProperty Name="Experiencia1" ColumnName="Experiencia1" />
+          <ScalarProperty Name="Experiencia2" ColumnName="Experiencia2" />
+          <ScalarProperty Name="Experiencia3" ColumnName="Experiencia3" />
+          <ScalarProperty Name="Experiencia4" ColumnName="Experiencia4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_DocConcytec">
+      <EntityTypeMapping TypeName="CONCYTECModel.Tipo_DocConcytec">
+        <MappingFragment StoreEntitySet="Tipo_DocConcytec">
+          <ScalarProperty Name="id_TipDocCon" ColumnName="id_TipDocCon" />
+          <ScalarProperty Name="DescripcionTipCon" ColumnName="DescripcionTipCon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

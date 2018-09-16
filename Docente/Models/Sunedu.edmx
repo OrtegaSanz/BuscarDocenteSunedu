@@ -1,0 +1,2270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SUNEDUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.ACCESO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="ACCESO">
+          <Key>
+            <PropertyRef Name="id_Acceso" />
+          </Key>
+          <Property Name="id_Acceso" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="Paswoord" Type="char" MaxLength="18" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Autorizacion' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Autorizacion">
+          <Key>
+            <PropertyRef Name="id_Autorizacion" />
+          </Key>
+          <Property Name="id_Autorizacion" Type="int" Nullable="false" />
+          <Property Name="DescripcionAutorizacion" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.BOLSA_TRABAJO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="BOLSA_TRABAJO">
+          <Key>
+            <PropertyRef Name="id_Bolsa" />
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Bolsa" Type="int" Nullable="false" />
+          <Property Name="EnteEncargado" Type="varchar" MaxLength="225" />
+          <Property Name="PortalWebBolsa" Type="varchar" MaxLength="225" />
+          <Property Name="id_Documento" Type="int" Nullable="false" />
+          <Property Name="NombreBolsa" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Carrera' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Carrera">
+          <Key>
+            <PropertyRef Name="id_Carrera" />
+          </Key>
+          <Property Name="id_Carrera" Type="int" Nullable="false" />
+          <Property Name="NombreCarrera" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Categoria' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="id_Categoria" />
+          </Key>
+          <Property Name="id_Categoria" Type="int" Nullable="false" />
+          <Property Name="DescripcionCat" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Categoria_Docentes' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Categoria_Docentes">
+          <Key>
+            <PropertyRef Name="id_Categoria" />
+            <PropertyRef Name="id_Docente" />
+          </Key>
+          <Property Name="id_Categoria" Type="int" Nullable="false" />
+          <Property Name="id_Docente" Type="int" Nullable="false" />
+          <Property Name="ObservacionesCat" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.CategoriaXCarrera' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="CategoriaXCarrera">
+          <Key>
+            <PropertyRef Name="id_TipCarrera" />
+            <PropertyRef Name="id_Carrera" />
+          </Key>
+          <Property Name="id_TipCarrera" Type="int" Nullable="false" />
+          <Property Name="id_Carrera" Type="int" Nullable="false" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.DOCENTE' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="DOCENTE">
+          <Key>
+            <PropertyRef Name="id_Docente" />
+            <PropertyRef Name="id_TipDocente" />
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Docente" Type="int" Nullable="false" />
+          <Property Name="Nombres" Type="varchar" MaxLength="225" />
+          <Property Name="Apellido_Paterno" Type="varchar" MaxLength="225" />
+          <Property Name="Fecha_Nacimiento" Type="date" />
+          <Property Name="Apellido_Materno" Type="varchar" MaxLength="225" />
+          <Property Name="Nacionalidad" Type="varchar" MaxLength="225" />
+          <Property Name="DNI_CarnetExtranjeria" Type="varchar" MaxLength="225" />
+          <Property Name="TiempoDocencia" Type="varchar" MaxLength="225" />
+          <Property Name="id_TipDocente" Type="int" Nullable="false" />
+          <Property Name="id_Documento" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.DocenteXSede' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="DocenteXSede">
+          <Key>
+            <PropertyRef Name="id_Docente" />
+            <PropertyRef Name="id_Sede" />
+          </Key>
+          <Property Name="id_Docente" Type="int" Nullable="false" />
+          <Property Name="id_Sede" Type="int" Nullable="false" />
+          <Property Name="TiempoEnSede" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Documento_Bolsa' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Documento_Bolsa">
+          <Key>
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Documento" Type="int" Nullable="false" />
+          <Property Name="DescripcionDocBolsa" Type="varchar" MaxLength="225" />
+          <Property Name="ArchivoBolsa" Type="varbinary" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Documento_Servicio' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Documento_Servicio">
+          <Key>
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Documento" Type="int" Nullable="false" />
+          <Property Name="DescripcionDocServicio" Type="varchar" MaxLength="225" />
+          <Property Name="ArchivoDocServ" Type="varbinary" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Documento_Transparencia' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Documento_Transparencia">
+          <Key>
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Documento" Type="int" Nullable="false" />
+          <Property Name="DescripcionDocTransp" Type="varchar" MaxLength="225" />
+          <Property Name="ArchivoTransp" Type="varbinary" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Documentos_Docente' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Documentos_Docente">
+          <Key>
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Documento" Type="int" Nullable="false" />
+          <Property Name="DescripcionDoc" Type="varchar" MaxLength="225" />
+          <Property Name="Archivo" Type="varbinary" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Documentos_Investigacion' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Documentos_Investigacion">
+          <Key>
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Documento" Type="int" Nullable="false" />
+          <Property Name="DescripcionDocInvest" Type="varchar" MaxLength="225" />
+          <Property Name="ArchivoDocInvest" Type="varbinary" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Documentos_Universidad' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Documentos_Universidad">
+          <Key>
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Documento" Type="int" Nullable="false" />
+          <Property Name="DescripcionDoc" Type="varchar" MaxLength="225" />
+          <Property Name="Archivo" Type="varbinary" MaxLength="225" />
+          <Property Name="FechaDocumento" Type="datetime" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.FINANZAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="FINANZAS">
+          <Key>
+            <PropertyRef Name="id_Finanzas" />
+          </Key>
+          <Property Name="id_Finanzas" Type="int" Nullable="false" />
+          <Property Name="NombreDocumentoFinanz" Type="varchar" MaxLength="225" />
+          <Property Name="ArchivoFinanzas" Type="varbinary" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Grado' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Grado">
+          <Key>
+            <PropertyRef Name="id_Grado" />
+            <PropertyRef Name="DescripcionGrado" />
+          </Key>
+          <Property Name="id_Grado" Type="int" Nullable="false" />
+          <Property Name="DescripcionGrado" Type="varchar" MaxLength="225" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Grado_Docente' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Grado_Docente">
+          <Key>
+            <PropertyRef Name="id_Grado" />
+            <PropertyRef Name="id_Docente" />
+          </Key>
+          <Property Name="id_Grado" Type="int" Nullable="false" />
+          <Property Name="id_Docente" Type="int" Nullable="false" />
+          <Property Name="ObservacionesGrad" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.INVESTIGACION' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="INVESTIGACION">
+          <Key>
+            <PropertyRef Name="id_Investigación" />
+            <PropertyRef Name="Id_Proyecto" />
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Investigación" Type="int" Nullable="false" />
+          <Property Name="DescripcionInv" Type="varchar" MaxLength="225" />
+          <Property Name="Id_Proyecto" Type="int" Nullable="false" />
+          <Property Name="id_Documento" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.InvestigacionXDocente' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="InvestigacionXDocente">
+          <Key>
+            <PropertyRef Name="id_Docente" />
+            <PropertyRef Name="id_Investigación" />
+          </Key>
+          <Property Name="id_Docente" Type="int" Nullable="false" />
+          <Property Name="id_Investigación" Type="int" Nullable="false" />
+          <Property Name="EstadoInvestigacion" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Localidad' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Localidad">
+          <Key>
+            <PropertyRef Name="id_localidad" />
+          </Key>
+          <Property Name="id_localidad" Type="int" Nullable="false" />
+          <Property Name="DescripcionLocalidad" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Modalidad_Creacion' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Modalidad_Creacion">
+          <Key>
+            <PropertyRef Name="id_ModCreacion" />
+          </Key>
+          <Property Name="id_ModCreacion" Type="int" Nullable="false" />
+          <Property Name="DescripcionModalidad" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Periodo_Academico' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Periodo_Academico">
+          <Key>
+            <PropertyRef Name="id_PerAcademico" />
+          </Key>
+          <Property Name="id_PerAcademico" Type="int" Nullable="false" />
+          <Property Name="DescripcionPerAcad" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.PROGRAMA' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="PROGRAMA">
+          <Key>
+            <PropertyRef Name="id_Programa" />
+            <PropertyRef Name="id_PerAcademico" />
+          </Key>
+          <Property Name="id_Programa" Type="int" Nullable="false" />
+          <Property Name="NombrePrograma" Type="varchar" MaxLength="225" />
+          <Property Name="id_PerAcademico" Type="int" Nullable="false" />
+          <Property Name="FechaCreacionProg" Type="datetime" />
+          <Property Name="CodigoPrograma" Type="int" />
+          <Property Name="Modalidad" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.ProgramasXCarrera' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="ProgramasXCarrera">
+          <Key>
+            <PropertyRef Name="id_Carrera" />
+            <PropertyRef Name="id_Programa" />
+            <PropertyRef Name="id_Docente" />
+          </Key>
+          <Property Name="id_Carrera" Type="int" Nullable="false" />
+          <Property Name="id_Programa" Type="int" Nullable="false" />
+          <Property Name="FechaInicio" Type="datetime" />
+          <Property Name="id_Docente" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.ProgramaXSede' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="ProgramaXSede">
+          <Key>
+            <PropertyRef Name="id_Sede" />
+            <PropertyRef Name="id_Programa" />
+          </Key>
+          <Property Name="id_Sede" Type="int" Nullable="false" />
+          <Property Name="id_Programa" Type="int" Nullable="false" />
+          <Property Name="Duracion" Type="char" MaxLength="18" />
+          <Property Name="ObservacionesProgXSed" Type="char" MaxLength="18" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Proyectos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Proyectos">
+          <Key>
+            <PropertyRef Name="Id_Proyecto" />
+          </Key>
+          <Property Name="Id_Proyecto" Type="int" Nullable="false" />
+          <Property Name="DescripciónProy" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.SEDE' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="SEDE">
+          <Key>
+            <PropertyRef Name="id_Sede" />
+            <PropertyRef Name="id_SedeCentral" />
+            <PropertyRef Name="id_localidad" />
+          </Key>
+          <Property Name="id_Sede" Type="int" Nullable="false" />
+          <Property Name="id_SedeCentral" Type="int" Nullable="false" />
+          <Property Name="id_localidad" Type="int" Nullable="false" />
+          <Property Name="NombreSede" Type="varchar" MaxLength="225" />
+          <Property Name="CantidadLaboratorios" Type="varchar" MaxLength="225" />
+          <Property Name="CantidadTalleres" Type="varchar" MaxLength="225" />
+          <Property Name="CantidadAmbientesParaDocentes" Type="varchar" MaxLength="225" />
+          <Property Name="CantidadAulas" Type="varchar" MaxLength="225" />
+          <Property Name="CantidadBibliotecas" Type="varchar" MaxLength="225" />
+          <Property Name="CantidadAuditorio" Type="varchar" MaxLength="225" />
+          <Property Name="CantidadCanchasDeportivas" Type="varchar" MaxLength="225" />
+          <Property Name="CantidadSalasEstudio" Type="varchar" MaxLength="225" />
+          <Property Name="CantidadSalasInvest" Type="varchar" MaxLength="225" />
+          <Property Name="CantidadAcervoBibliog" Type="varchar" MaxLength="225" />
+          <Property Name="Jerarquia" Type="varchar" MaxLength="225" />
+          <Property Name="FechaPrimerPA" Type="datetime" />
+          <Property Name="CantidadEstudiantes" Type="varchar" MaxLength="225" />
+          <Property Name="NombreFacultad" Type="varchar" MaxLength="225" />
+          <Property Name="NumeroLocal" Type="varchar" MaxLength="225" />
+          <Property Name="CodigoLocal" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.SERVICIOS_COMPLEMENTARIOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="SERVICIOS_COMPLEMENTARIOS">
+          <Key>
+            <PropertyRef Name="id_Servicios" />
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Servicios" Type="int" Nullable="false" />
+          <Property Name="DescripcionServicio" Type="varchar" MaxLength="225" />
+          <Property Name="NumeroDeServicios" Type="varchar" MaxLength="225" />
+          <Property Name="id_Documento" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Tip_Grado' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Tip_Grado">
+          <Key>
+            <PropertyRef Name="id_TipDocente" />
+            <PropertyRef Name="id_Docente" />
+            <PropertyRef Name="id_Grado" />
+          </Key>
+          <Property Name="id_TipDocente" Type="int" Nullable="false" />
+          <Property Name="ObsTipGrado" Type="varchar" MaxLength="225" />
+          <Property Name="id_Docente" Type="int" Nullable="false" />
+          <Property Name="id_Grado" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Tipo_Categoria' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Tipo_Categoria">
+          <Key>
+            <PropertyRef Name="id_TipCarrera" />
+          </Key>
+          <Property Name="id_TipCarrera" Type="int" Nullable="false" />
+          <Property Name="DescripcionTipCarrera" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.Tipo_Docente' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Tipo_Docente">
+          <Key>
+            <PropertyRef Name="id_TipDocente" />
+          </Key>
+          <Property Name="id_TipDocente" Type="int" Nullable="false" />
+          <Property Name="DescripcionTipo" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.TipoGestion' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TipoGestion">
+          <Key>
+            <PropertyRef Name="id_Gestion" />
+          </Key>
+          <Property Name="id_Gestion" Type="int" Nullable="false" />
+          <Property Name="DescripcionGestion" Type="varchar" MaxLength="225" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.TRANSPARENCIA' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TRANSPARENCIA">
+          <Key>
+            <PropertyRef Name="id_Transparencia" />
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Transparencia" Type="int" Nullable="false" />
+          <Property Name="PortalWeb" Type="varchar" MaxLength="225" />
+          <Property Name="Mision" Type="varchar" MaxLength="225" />
+          <Property Name="Vision" Type="varchar" MaxLength="225" />
+          <Property Name="id_Documento" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SUNEDU.dbo.UNIVERSIDAD' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="UNIVERSIDAD">
+          <Key>
+            <PropertyRef Name="id_Universidad" />
+            <PropertyRef Name="id_Acceso" />
+            <PropertyRef Name="id_Investigación" />
+            <PropertyRef Name="id_Docente" />
+            <PropertyRef Name="id_Programa" />
+            <PropertyRef Name="id_Documento" />
+            <PropertyRef Name="id_Autorizacion" />
+            <PropertyRef Name="id_Gestion" />
+            <PropertyRef Name="id_ModCreacion" />
+            <PropertyRef Name="id_Sede" />
+            <PropertyRef Name="id_Servicios" />
+            <PropertyRef Name="id_Bolsa" />
+            <PropertyRef Name="id_Transparencia" />
+            <PropertyRef Name="id_Finanzas" />
+          </Key>
+          <Property Name="id_Universidad" Type="int" Nullable="false" />
+          <Property Name="id_Acceso" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="id_Investigación" Type="int" Nullable="false" />
+          <Property Name="id_Docente" Type="int" Nullable="false" />
+          <Property Name="id_Programa" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="225" />
+          <Property Name="NRuc" Type="varchar" MaxLength="225" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="225" />
+          <Property Name="id_Documento" Type="int" Nullable="false" />
+          <Property Name="id_Autorizacion" Type="int" Nullable="false" />
+          <Property Name="id_Gestion" Type="int" Nullable="false" />
+          <Property Name="id_ModCreacion" Type="int" Nullable="false" />
+          <Property Name="id_Sede" Type="int" Nullable="false" />
+          <Property Name="id_Servicios" Type="int" Nullable="false" />
+          <Property Name="id_Bolsa" Type="int" Nullable="false" />
+          <Property Name="id_Transparencia" Type="int" Nullable="false" />
+          <Property Name="id_Finanzas" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__BOLSA_TRA__id_Do__4316F928">
+          <End Role="Documento_Bolsa" Type="Self.Documento_Bolsa" Multiplicity="1" />
+          <End Role="BOLSA_TRABAJO" Type="Self.BOLSA_TRABAJO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documento_Bolsa">
+              <PropertyRef Name="id_Documento" />
+            </Principal>
+            <Dependent Role="BOLSA_TRABAJO">
+              <PropertyRef Name="id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Categoria__id_Ca__440B1D61">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+          <End Role="Categoria_Docentes" Type="Self.Categoria_Docentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="id_Categoria" />
+            </Principal>
+            <Dependent Role="Categoria_Docentes">
+              <PropertyRef Name="id_Categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Categoria__id_Ca__46E78A0C">
+          <End Role="Carrera" Type="Self.Carrera" Multiplicity="1" />
+          <End Role="CategoriaXCarrera" Type="Self.CategoriaXCarrera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrera">
+              <PropertyRef Name="id_Carrera" />
+            </Principal>
+            <Dependent Role="CategoriaXCarrera">
+              <PropertyRef Name="id_Carrera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__Categoria__id_Do__44FF419A' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Categoria__id_Do__44FF419A" />-->
+        <Association Name="FK__Categoria__id_Ti__45F365D3">
+          <End Role="Tipo_Categoria" Type="Self.Tipo_Categoria" Multiplicity="1" />
+          <End Role="CategoriaXCarrera" Type="Self.CategoriaXCarrera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Categoria">
+              <PropertyRef Name="id_TipCarrera" />
+            </Principal>
+            <Dependent Role="CategoriaXCarrera">
+              <PropertyRef Name="id_TipCarrera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DOCENTE__id_Docu__48CFD27E">
+          <End Role="Documentos_Docente" Type="Self.Documentos_Docente" Multiplicity="1" />
+          <End Role="DOCENTE" Type="Self.DOCENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documentos_Docente">
+              <PropertyRef Name="id_Documento" />
+            </Principal>
+            <Dependent Role="DOCENTE">
+              <PropertyRef Name="id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DOCENTE__id_TipD__47DBAE45">
+          <End Role="Tipo_Docente" Type="Self.Tipo_Docente" Multiplicity="1" />
+          <End Role="DOCENTE" Type="Self.DOCENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Docente">
+              <PropertyRef Name="id_TipDocente" />
+            </Principal>
+            <Dependent Role="DOCENTE">
+              <PropertyRef Name="id_TipDocente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__DocenteXS__id_Do__49C3F6B7' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__DocenteXS__id_Do__49C3F6B7" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__DocenteXS__id_Se__4AB81AF0' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__DocenteXS__id_Se__4AB81AF0" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__Grado_Doc__id_Do__4CA06362' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Grado_Doc__id_Do__4CA06362" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__Grado_Doc__id_Gr__4BAC3F29' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Grado_Doc__id_Gr__4BAC3F29" />-->
+        <Association Name="FK__INVESTIGA__id_Do__4E88ABD4">
+          <End Role="Documentos_Investigacion" Type="Self.Documentos_Investigacion" Multiplicity="1" />
+          <End Role="INVESTIGACION" Type="Self.INVESTIGACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documentos_Investigacion">
+              <PropertyRef Name="id_Documento" />
+            </Principal>
+            <Dependent Role="INVESTIGACION">
+              <PropertyRef Name="id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__Investiga__id_Do__4F7CD00D' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Investiga__id_Do__4F7CD00D" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__Investiga__id_In__5070F446' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Investiga__id_In__5070F446" />-->
+        <Association Name="FK__INVESTIGA__Id_Pr__4D94879B">
+          <End Role="Proyectos" Type="Self.Proyectos" Multiplicity="1" />
+          <End Role="INVESTIGACION" Type="Self.INVESTIGACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyectos">
+              <PropertyRef Name="Id_Proyecto" />
+            </Principal>
+            <Dependent Role="INVESTIGACION">
+              <PropertyRef Name="Id_Proyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PROGRAMA__id_Per__5165187F">
+          <End Role="Periodo_Academico" Type="Self.Periodo_Academico" Multiplicity="1" />
+          <End Role="PROGRAMA" Type="Self.PROGRAMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periodo_Academico">
+              <PropertyRef Name="id_PerAcademico" />
+            </Principal>
+            <Dependent Role="PROGRAMA">
+              <PropertyRef Name="id_PerAcademico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Programas__id_Ca__52593CB8">
+          <End Role="Carrera" Type="Self.Carrera" Multiplicity="1" />
+          <End Role="ProgramasXCarrera" Type="Self.ProgramasXCarrera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrera">
+              <PropertyRef Name="id_Carrera" />
+            </Principal>
+            <Dependent Role="ProgramasXCarrera">
+              <PropertyRef Name="id_Carrera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__Programas__id_Do__5441852A' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Programas__id_Do__5441852A" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__Programas__id_Pr__534D60F1' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Programas__id_Pr__534D60F1" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__ProgramaX__id_Pr__5629CD9C' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__ProgramaX__id_Pr__5629CD9C" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__ProgramaX__id_Se__5535A963' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__ProgramaX__id_Se__5535A963" />-->
+        <Association Name="FK__SEDE__id_localid__571DF1D5">
+          <End Role="Localidad" Type="Self.Localidad" Multiplicity="1" />
+          <End Role="SEDE" Type="Self.SEDE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidad">
+              <PropertyRef Name="id_localidad" />
+            </Principal>
+            <Dependent Role="SEDE">
+              <PropertyRef Name="id_localidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__SEDE__id_SedeCen__5812160E' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__SEDE__id_SedeCen__5812160E" />-->
+        <Association Name="FK__SERVICIOS__id_Do__59063A47">
+          <End Role="Documento_Servicio" Type="Self.Documento_Servicio" Multiplicity="1" />
+          <End Role="SERVICIOS_COMPLEMENTARIOS" Type="Self.SERVICIOS_COMPLEMENTARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documento_Servicio">
+              <PropertyRef Name="id_Documento" />
+            </Principal>
+            <Dependent Role="SERVICIOS_COMPLEMENTARIOS">
+              <PropertyRef Name="id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tip_Grado__5AEE82B9">
+          <End Role="Grado_Docente" Type="Self.Grado_Docente" Multiplicity="1" />
+          <End Role="Tip_Grado" Type="Self.Tip_Grado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grado_Docente">
+              <PropertyRef Name="id_Docente" />
+              <PropertyRef Name="id_Grado" />
+            </Principal>
+            <Dependent Role="Tip_Grado">
+              <PropertyRef Name="id_Docente" />
+              <PropertyRef Name="id_Grado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tip_Grado__id_Ti__59FA5E80">
+          <End Role="Tipo_Docente" Type="Self.Tipo_Docente" Multiplicity="1" />
+          <End Role="Tip_Grado" Type="Self.Tip_Grado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Docente">
+              <PropertyRef Name="id_TipDocente" />
+            </Principal>
+            <Dependent Role="Tip_Grado">
+              <PropertyRef Name="id_TipDocente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TRANSPARE__id_Do__5BE2A6F2">
+          <End Role="Documento_Transparencia" Type="Self.Documento_Transparencia" Multiplicity="1" />
+          <End Role="TRANSPARENCIA" Type="Self.TRANSPARENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documento_Transparencia">
+              <PropertyRef Name="id_Documento" />
+            </Principal>
+            <Dependent Role="TRANSPARENCIA">
+              <PropertyRef Name="id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UNIVERSID__id_Ac__5CD6CB2B">
+          <End Role="ACCESO" Type="Self.ACCESO" Multiplicity="1" />
+          <End Role="UNIVERSIDAD" Type="Self.UNIVERSIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCESO">
+              <PropertyRef Name="id_Acceso" />
+            </Principal>
+            <Dependent Role="UNIVERSIDAD">
+              <PropertyRef Name="id_Acceso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UNIVERSID__id_Au__619B8048">
+          <End Role="Autorizacion" Type="Self.Autorizacion" Multiplicity="1" />
+          <End Role="UNIVERSIDAD" Type="Self.UNIVERSIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Autorizacion">
+              <PropertyRef Name="id_Autorizacion" />
+            </Principal>
+            <Dependent Role="UNIVERSIDAD">
+              <PropertyRef Name="id_Autorizacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__UNIVERSID__id_Bo__66603565' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__UNIVERSID__id_Bo__66603565" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__UNIVERSID__id_Do__5EBF139D' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__UNIVERSID__id_Do__5EBF139D" />-->
+        <Association Name="FK__UNIVERSID__id_Do__60A75C0F">
+          <End Role="Documentos_Universidad" Type="Self.Documentos_Universidad" Multiplicity="1" />
+          <End Role="UNIVERSIDAD" Type="Self.UNIVERSIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documentos_Universidad">
+              <PropertyRef Name="id_Documento" />
+            </Principal>
+            <Dependent Role="UNIVERSIDAD">
+              <PropertyRef Name="id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UNIVERSID__id_Fi__68487DD7">
+          <End Role="FINANZAS" Type="Self.FINANZAS" Multiplicity="1" />
+          <End Role="UNIVERSIDAD" Type="Self.UNIVERSIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FINANZAS">
+              <PropertyRef Name="id_Finanzas" />
+            </Principal>
+            <Dependent Role="UNIVERSIDAD">
+              <PropertyRef Name="id_Finanzas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UNIVERSID__id_Ge__628FA481">
+          <End Role="TipoGestion" Type="Self.TipoGestion" Multiplicity="1" />
+          <End Role="UNIVERSIDAD" Type="Self.UNIVERSIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoGestion">
+              <PropertyRef Name="id_Gestion" />
+            </Principal>
+            <Dependent Role="UNIVERSIDAD">
+              <PropertyRef Name="id_Gestion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__UNIVERSID__id_In__5DCAEF64' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__UNIVERSID__id_In__5DCAEF64" />-->
+        <Association Name="FK__UNIVERSID__id_Mo__6383C8BA">
+          <End Role="Modalidad_Creacion" Type="Self.Modalidad_Creacion" Multiplicity="1" />
+          <End Role="UNIVERSIDAD" Type="Self.UNIVERSIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modalidad_Creacion">
+              <PropertyRef Name="id_ModCreacion" />
+            </Principal>
+            <Dependent Role="UNIVERSIDAD">
+              <PropertyRef Name="id_ModCreacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__UNIVERSID__id_Pr__5FB337D6' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__UNIVERSID__id_Pr__5FB337D6" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__UNIVERSID__id_Se__6477ECF3' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__UNIVERSID__id_Se__6477ECF3" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__UNIVERSID__id_Se__656C112C' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__UNIVERSID__id_Se__656C112C" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__UNIVERSID__id_Tr__6754599E' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__UNIVERSID__id_Tr__6754599E" />-->
+        <EntityContainer Name="SUNEDUModelStoreContainer">
+          <EntitySet Name="ACCESO" EntityType="Self.ACCESO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ACCESO].[id_Acceso] AS [id_Acceso], 
+    [ACCESO].[Paswoord] AS [Paswoord]
+    FROM [dbo].[ACCESO] AS [ACCESO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Autorizacion" EntityType="Self.Autorizacion" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Autorizacion].[id_Autorizacion] AS [id_Autorizacion], 
+    [Autorizacion].[DescripcionAutorizacion] AS [DescripcionAutorizacion]
+    FROM [dbo].[Autorizacion] AS [Autorizacion]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BOLSA_TRABAJO" EntityType="Self.BOLSA_TRABAJO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BOLSA_TRABAJO].[id_Bolsa] AS [id_Bolsa], 
+    [BOLSA_TRABAJO].[EnteEncargado] AS [EnteEncargado], 
+    [BOLSA_TRABAJO].[PortalWebBolsa] AS [PortalWebBolsa], 
+    [BOLSA_TRABAJO].[id_Documento] AS [id_Documento], 
+    [BOLSA_TRABAJO].[NombreBolsa] AS [NombreBolsa]
+    FROM [dbo].[BOLSA_TRABAJO] AS [BOLSA_TRABAJO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Carrera" EntityType="Self.Carrera" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Carrera].[id_Carrera] AS [id_Carrera], 
+    [Carrera].[NombreCarrera] AS [NombreCarrera]
+    FROM [dbo].[Carrera] AS [Carrera]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Categoria].[id_Categoria] AS [id_Categoria], 
+    [Categoria].[DescripcionCat] AS [DescripcionCat]
+    FROM [dbo].[Categoria] AS [Categoria]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Categoria_Docentes" EntityType="Self.Categoria_Docentes" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Categoria_Docentes].[id_Categoria] AS [id_Categoria], 
+    [Categoria_Docentes].[id_Docente] AS [id_Docente], 
+    [Categoria_Docentes].[ObservacionesCat] AS [ObservacionesCat]
+    FROM [dbo].[Categoria_Docentes] AS [Categoria_Docentes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CategoriaXCarrera" EntityType="Self.CategoriaXCarrera" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CategoriaXCarrera].[id_TipCarrera] AS [id_TipCarrera], 
+    [CategoriaXCarrera].[id_Carrera] AS [id_Carrera], 
+    [CategoriaXCarrera].[Observaciones] AS [Observaciones]
+    FROM [dbo].[CategoriaXCarrera] AS [CategoriaXCarrera]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DOCENTE" EntityType="Self.DOCENTE" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DOCENTE].[id_Docente] AS [id_Docente], 
+    [DOCENTE].[Nombres] AS [Nombres], 
+    [DOCENTE].[Apellido_Paterno] AS [Apellido_Paterno], 
+    [DOCENTE].[Fecha_Nacimiento] AS [Fecha_Nacimiento], 
+    [DOCENTE].[Apellido_Materno] AS [Apellido_Materno], 
+    [DOCENTE].[Nacionalidad] AS [Nacionalidad], 
+    [DOCENTE].[DNI_CarnetExtranjeria] AS [DNI_CarnetExtranjeria], 
+    [DOCENTE].[TiempoDocencia] AS [TiempoDocencia], 
+    [DOCENTE].[id_TipDocente] AS [id_TipDocente], 
+    [DOCENTE].[id_Documento] AS [id_Documento]
+    FROM [dbo].[DOCENTE] AS [DOCENTE]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DocenteXSede" EntityType="Self.DocenteXSede" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DocenteXSede].[id_Docente] AS [id_Docente], 
+    [DocenteXSede].[id_Sede] AS [id_Sede], 
+    [DocenteXSede].[TiempoEnSede] AS [TiempoEnSede]
+    FROM [dbo].[DocenteXSede] AS [DocenteXSede]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Documento_Bolsa" EntityType="Self.Documento_Bolsa" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Documento_Bolsa].[id_Documento] AS [id_Documento], 
+    [Documento_Bolsa].[DescripcionDocBolsa] AS [DescripcionDocBolsa], 
+    [Documento_Bolsa].[ArchivoBolsa] AS [ArchivoBolsa]
+    FROM [dbo].[Documento_Bolsa] AS [Documento_Bolsa]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Documento_Servicio" EntityType="Self.Documento_Servicio" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Documento_Servicio].[id_Documento] AS [id_Documento], 
+    [Documento_Servicio].[DescripcionDocServicio] AS [DescripcionDocServicio], 
+    [Documento_Servicio].[ArchivoDocServ] AS [ArchivoDocServ]
+    FROM [dbo].[Documento_Servicio] AS [Documento_Servicio]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Documento_Transparencia" EntityType="Self.Documento_Transparencia" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Documento_Transparencia].[id_Documento] AS [id_Documento], 
+    [Documento_Transparencia].[DescripcionDocTransp] AS [DescripcionDocTransp], 
+    [Documento_Transparencia].[ArchivoTransp] AS [ArchivoTransp]
+    FROM [dbo].[Documento_Transparencia] AS [Documento_Transparencia]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Documentos_Docente" EntityType="Self.Documentos_Docente" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Documentos_Docente].[id_Documento] AS [id_Documento], 
+    [Documentos_Docente].[DescripcionDoc] AS [DescripcionDoc], 
+    [Documentos_Docente].[Archivo] AS [Archivo]
+    FROM [dbo].[Documentos_Docente] AS [Documentos_Docente]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Documentos_Investigacion" EntityType="Self.Documentos_Investigacion" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Documentos_Investigacion].[id_Documento] AS [id_Documento], 
+    [Documentos_Investigacion].[DescripcionDocInvest] AS [DescripcionDocInvest], 
+    [Documentos_Investigacion].[ArchivoDocInvest] AS [ArchivoDocInvest]
+    FROM [dbo].[Documentos_Investigacion] AS [Documentos_Investigacion]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Documentos_Universidad" EntityType="Self.Documentos_Universidad" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Documentos_Universidad].[id_Documento] AS [id_Documento], 
+    [Documentos_Universidad].[DescripcionDoc] AS [DescripcionDoc], 
+    [Documentos_Universidad].[Archivo] AS [Archivo], 
+    [Documentos_Universidad].[FechaDocumento] AS [FechaDocumento]
+    FROM [dbo].[Documentos_Universidad] AS [Documentos_Universidad]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FINANZAS" EntityType="Self.FINANZAS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [FINANZAS].[id_Finanzas] AS [id_Finanzas], 
+    [FINANZAS].[NombreDocumentoFinanz] AS [NombreDocumentoFinanz], 
+    [FINANZAS].[ArchivoFinanzas] AS [ArchivoFinanzas]
+    FROM [dbo].[FINANZAS] AS [FINANZAS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Grado" EntityType="Self.Grado" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Grado].[id_Grado] AS [id_Grado], 
+    [Grado].[DescripcionGrado] AS [DescripcionGrado]
+    FROM [dbo].[Grado] AS [Grado]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Grado_Docente" EntityType="Self.Grado_Docente" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Grado_Docente].[id_Grado] AS [id_Grado], 
+    [Grado_Docente].[id_Docente] AS [id_Docente], 
+    [Grado_Docente].[ObservacionesGrad] AS [ObservacionesGrad]
+    FROM [dbo].[Grado_Docente] AS [Grado_Docente]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="INVESTIGACION" EntityType="Self.INVESTIGACION" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [INVESTIGACION].[id_Investigación] AS [id_Investigación], 
+    [INVESTIGACION].[DescripcionInv] AS [DescripcionInv], 
+    [INVESTIGACION].[Id_Proyecto] AS [Id_Proyecto], 
+    [INVESTIGACION].[id_Documento] AS [id_Documento]
+    FROM [dbo].[INVESTIGACION] AS [INVESTIGACION]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="InvestigacionXDocente" EntityType="Self.InvestigacionXDocente" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [InvestigacionXDocente].[id_Docente] AS [id_Docente], 
+    [InvestigacionXDocente].[id_Investigación] AS [id_Investigación], 
+    [InvestigacionXDocente].[EstadoInvestigacion] AS [EstadoInvestigacion]
+    FROM [dbo].[InvestigacionXDocente] AS [InvestigacionXDocente]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Localidad" EntityType="Self.Localidad" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Localidad].[id_localidad] AS [id_localidad], 
+    [Localidad].[DescripcionLocalidad] AS [DescripcionLocalidad]
+    FROM [dbo].[Localidad] AS [Localidad]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Modalidad_Creacion" EntityType="Self.Modalidad_Creacion" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Modalidad_Creacion].[id_ModCreacion] AS [id_ModCreacion], 
+    [Modalidad_Creacion].[DescripcionModalidad] AS [DescripcionModalidad]
+    FROM [dbo].[Modalidad_Creacion] AS [Modalidad_Creacion]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Periodo_Academico" EntityType="Self.Periodo_Academico" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Periodo_Academico].[id_PerAcademico] AS [id_PerAcademico], 
+    [Periodo_Academico].[DescripcionPerAcad] AS [DescripcionPerAcad]
+    FROM [dbo].[Periodo_Academico] AS [Periodo_Academico]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PROGRAMA" EntityType="Self.PROGRAMA" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PROGRAMA].[id_Programa] AS [id_Programa], 
+    [PROGRAMA].[NombrePrograma] AS [NombrePrograma], 
+    [PROGRAMA].[id_PerAcademico] AS [id_PerAcademico], 
+    [PROGRAMA].[FechaCreacionProg] AS [FechaCreacionProg], 
+    [PROGRAMA].[CodigoPrograma] AS [CodigoPrograma], 
+    [PROGRAMA].[Modalidad] AS [Modalidad]
+    FROM [dbo].[PROGRAMA] AS [PROGRAMA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProgramasXCarrera" EntityType="Self.ProgramasXCarrera" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProgramasXCarrera].[id_Carrera] AS [id_Carrera], 
+    [ProgramasXCarrera].[id_Programa] AS [id_Programa], 
+    [ProgramasXCarrera].[FechaInicio] AS [FechaInicio], 
+    [ProgramasXCarrera].[id_Docente] AS [id_Docente]
+    FROM [dbo].[ProgramasXCarrera] AS [ProgramasXCarrera]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProgramaXSede" EntityType="Self.ProgramaXSede" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProgramaXSede].[id_Sede] AS [id_Sede], 
+    [ProgramaXSede].[id_Programa] AS [id_Programa], 
+    [ProgramaXSede].[Duracion] AS [Duracion], 
+    [ProgramaXSede].[ObservacionesProgXSed] AS [ObservacionesProgXSed]
+    FROM [dbo].[ProgramaXSede] AS [ProgramaXSede]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Proyectos" EntityType="Self.Proyectos" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Proyectos].[Id_Proyecto] AS [Id_Proyecto], 
+    [Proyectos].[DescripciónProy] AS [DescripciónProy]
+    FROM [dbo].[Proyectos] AS [Proyectos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SEDE" EntityType="Self.SEDE" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SEDE].[id_Sede] AS [id_Sede], 
+    [SEDE].[id_SedeCentral] AS [id_SedeCentral], 
+    [SEDE].[id_localidad] AS [id_localidad], 
+    [SEDE].[NombreSede] AS [NombreSede], 
+    [SEDE].[CantidadLaboratorios] AS [CantidadLaboratorios], 
+    [SEDE].[CantidadTalleres] AS [CantidadTalleres], 
+    [SEDE].[CantidadAmbientesParaDocentes] AS [CantidadAmbientesParaDocentes], 
+    [SEDE].[CantidadAulas] AS [CantidadAulas], 
+    [SEDE].[CantidadBibliotecas] AS [CantidadBibliotecas], 
+    [SEDE].[CantidadAuditorio] AS [CantidadAuditorio], 
+    [SEDE].[CantidadCanchasDeportivas] AS [CantidadCanchasDeportivas], 
+    [SEDE].[CantidadSalasEstudio] AS [CantidadSalasEstudio], 
+    [SEDE].[CantidadSalasInvest] AS [CantidadSalasInvest], 
+    [SEDE].[CantidadAcervoBibliog] AS [CantidadAcervoBibliog], 
+    [SEDE].[Jerarquia] AS [Jerarquia], 
+    [SEDE].[FechaPrimerPA] AS [FechaPrimerPA], 
+    [SEDE].[CantidadEstudiantes] AS [CantidadEstudiantes], 
+    [SEDE].[NombreFacultad] AS [NombreFacultad], 
+    [SEDE].[NumeroLocal] AS [NumeroLocal], 
+    [SEDE].[CodigoLocal] AS [CodigoLocal]
+    FROM [dbo].[SEDE] AS [SEDE]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SERVICIOS_COMPLEMENTARIOS" EntityType="Self.SERVICIOS_COMPLEMENTARIOS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SERVICIOS_COMPLEMENTARIOS].[id_Servicios] AS [id_Servicios], 
+    [SERVICIOS_COMPLEMENTARIOS].[DescripcionServicio] AS [DescripcionServicio], 
+    [SERVICIOS_COMPLEMENTARIOS].[NumeroDeServicios] AS [NumeroDeServicios], 
+    [SERVICIOS_COMPLEMENTARIOS].[id_Documento] AS [id_Documento]
+    FROM [dbo].[SERVICIOS_COMPLEMENTARIOS] AS [SERVICIOS_COMPLEMENTARIOS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tip_Grado" EntityType="Self.Tip_Grado" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tip_Grado].[id_TipDocente] AS [id_TipDocente], 
+    [Tip_Grado].[ObsTipGrado] AS [ObsTipGrado], 
+    [Tip_Grado].[id_Docente] AS [id_Docente], 
+    [Tip_Grado].[id_Grado] AS [id_Grado]
+    FROM [dbo].[Tip_Grado] AS [Tip_Grado]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tipo_Categoria" EntityType="Self.Tipo_Categoria" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tipo_Categoria].[id_TipCarrera] AS [id_TipCarrera], 
+    [Tipo_Categoria].[DescripcionTipCarrera] AS [DescripcionTipCarrera]
+    FROM [dbo].[Tipo_Categoria] AS [Tipo_Categoria]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tipo_Docente" EntityType="Self.Tipo_Docente" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tipo_Docente].[id_TipDocente] AS [id_TipDocente], 
+    [Tipo_Docente].[DescripcionTipo] AS [DescripcionTipo]
+    FROM [dbo].[Tipo_Docente] AS [Tipo_Docente]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TipoGestion" EntityType="Self.TipoGestion" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TipoGestion].[id_Gestion] AS [id_Gestion], 
+    [TipoGestion].[DescripcionGestion] AS [DescripcionGestion]
+    FROM [dbo].[TipoGestion] AS [TipoGestion]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TRANSPARENCIA" EntityType="Self.TRANSPARENCIA" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TRANSPARENCIA].[id_Transparencia] AS [id_Transparencia], 
+    [TRANSPARENCIA].[PortalWeb] AS [PortalWeb], 
+    [TRANSPARENCIA].[Mision] AS [Mision], 
+    [TRANSPARENCIA].[Vision] AS [Vision], 
+    [TRANSPARENCIA].[id_Documento] AS [id_Documento]
+    FROM [dbo].[TRANSPARENCIA] AS [TRANSPARENCIA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UNIVERSIDAD" EntityType="Self.UNIVERSIDAD" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UNIVERSIDAD].[id_Universidad] AS [id_Universidad], 
+    [UNIVERSIDAD].[id_Acceso] AS [id_Acceso], 
+    [UNIVERSIDAD].[id_Investigación] AS [id_Investigación], 
+    [UNIVERSIDAD].[id_Docente] AS [id_Docente], 
+    [UNIVERSIDAD].[id_Programa] AS [id_Programa], 
+    [UNIVERSIDAD].[Nombre] AS [Nombre], 
+    [UNIVERSIDAD].[NRuc] AS [NRuc], 
+    [UNIVERSIDAD].[RazonSocial] AS [RazonSocial], 
+    [UNIVERSIDAD].[id_Documento] AS [id_Documento], 
+    [UNIVERSIDAD].[id_Autorizacion] AS [id_Autorizacion], 
+    [UNIVERSIDAD].[id_Gestion] AS [id_Gestion], 
+    [UNIVERSIDAD].[id_ModCreacion] AS [id_ModCreacion], 
+    [UNIVERSIDAD].[id_Sede] AS [id_Sede], 
+    [UNIVERSIDAD].[id_Servicios] AS [id_Servicios], 
+    [UNIVERSIDAD].[id_Bolsa] AS [id_Bolsa], 
+    [UNIVERSIDAD].[id_Transparencia] AS [id_Transparencia], 
+    [UNIVERSIDAD].[id_Finanzas] AS [id_Finanzas]
+    FROM [dbo].[UNIVERSIDAD] AS [UNIVERSIDAD]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__BOLSA_TRA__id_Do__4316F928" Association="Self.FK__BOLSA_TRA__id_Do__4316F928">
+            <End Role="Documento_Bolsa" EntitySet="Documento_Bolsa" />
+            <End Role="BOLSA_TRABAJO" EntitySet="BOLSA_TRABAJO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Categoria__id_Ca__440B1D61" Association="Self.FK__Categoria__id_Ca__440B1D61">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Categoria_Docentes" EntitySet="Categoria_Docentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Categoria__id_Ca__46E78A0C" Association="Self.FK__Categoria__id_Ca__46E78A0C">
+            <End Role="Carrera" EntitySet="Carrera" />
+            <End Role="CategoriaXCarrera" EntitySet="CategoriaXCarrera" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Categoria__id_Ti__45F365D3" Association="Self.FK__Categoria__id_Ti__45F365D3">
+            <End Role="Tipo_Categoria" EntitySet="Tipo_Categoria" />
+            <End Role="CategoriaXCarrera" EntitySet="CategoriaXCarrera" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DOCENTE__id_Docu__48CFD27E" Association="Self.FK__DOCENTE__id_Docu__48CFD27E">
+            <End Role="Documentos_Docente" EntitySet="Documentos_Docente" />
+            <End Role="DOCENTE" EntitySet="DOCENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DOCENTE__id_TipD__47DBAE45" Association="Self.FK__DOCENTE__id_TipD__47DBAE45">
+            <End Role="Tipo_Docente" EntitySet="Tipo_Docente" />
+            <End Role="DOCENTE" EntitySet="DOCENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__INVESTIGA__id_Do__4E88ABD4" Association="Self.FK__INVESTIGA__id_Do__4E88ABD4">
+            <End Role="Documentos_Investigacion" EntitySet="Documentos_Investigacion" />
+            <End Role="INVESTIGACION" EntitySet="INVESTIGACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__INVESTIGA__Id_Pr__4D94879B" Association="Self.FK__INVESTIGA__Id_Pr__4D94879B">
+            <End Role="Proyectos" EntitySet="Proyectos" />
+            <End Role="INVESTIGACION" EntitySet="INVESTIGACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PROGRAMA__id_Per__5165187F" Association="Self.FK__PROGRAMA__id_Per__5165187F">
+            <End Role="Periodo_Academico" EntitySet="Periodo_Academico" />
+            <End Role="PROGRAMA" EntitySet="PROGRAMA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Programas__id_Ca__52593CB8" Association="Self.FK__Programas__id_Ca__52593CB8">
+            <End Role="Carrera" EntitySet="Carrera" />
+            <End Role="ProgramasXCarrera" EntitySet="ProgramasXCarrera" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SEDE__id_localid__571DF1D5" Association="Self.FK__SEDE__id_localid__571DF1D5">
+            <End Role="Localidad" EntitySet="Localidad" />
+            <End Role="SEDE" EntitySet="SEDE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SERVICIOS__id_Do__59063A47" Association="Self.FK__SERVICIOS__id_Do__59063A47">
+            <End Role="Documento_Servicio" EntitySet="Documento_Servicio" />
+            <End Role="SERVICIOS_COMPLEMENTARIOS" EntitySet="SERVICIOS_COMPLEMENTARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tip_Grado__5AEE82B9" Association="Self.FK__Tip_Grado__5AEE82B9">
+            <End Role="Grado_Docente" EntitySet="Grado_Docente" />
+            <End Role="Tip_Grado" EntitySet="Tip_Grado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tip_Grado__id_Ti__59FA5E80" Association="Self.FK__Tip_Grado__id_Ti__59FA5E80">
+            <End Role="Tipo_Docente" EntitySet="Tipo_Docente" />
+            <End Role="Tip_Grado" EntitySet="Tip_Grado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TRANSPARE__id_Do__5BE2A6F2" Association="Self.FK__TRANSPARE__id_Do__5BE2A6F2">
+            <End Role="Documento_Transparencia" EntitySet="Documento_Transparencia" />
+            <End Role="TRANSPARENCIA" EntitySet="TRANSPARENCIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UNIVERSID__id_Ac__5CD6CB2B" Association="Self.FK__UNIVERSID__id_Ac__5CD6CB2B">
+            <End Role="ACCESO" EntitySet="ACCESO" />
+            <End Role="UNIVERSIDAD" EntitySet="UNIVERSIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UNIVERSID__id_Au__619B8048" Association="Self.FK__UNIVERSID__id_Au__619B8048">
+            <End Role="Autorizacion" EntitySet="Autorizacion" />
+            <End Role="UNIVERSIDAD" EntitySet="UNIVERSIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UNIVERSID__id_Do__60A75C0F" Association="Self.FK__UNIVERSID__id_Do__60A75C0F">
+            <End Role="Documentos_Universidad" EntitySet="Documentos_Universidad" />
+            <End Role="UNIVERSIDAD" EntitySet="UNIVERSIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UNIVERSID__id_Fi__68487DD7" Association="Self.FK__UNIVERSID__id_Fi__68487DD7">
+            <End Role="FINANZAS" EntitySet="FINANZAS" />
+            <End Role="UNIVERSIDAD" EntitySet="UNIVERSIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UNIVERSID__id_Ge__628FA481" Association="Self.FK__UNIVERSID__id_Ge__628FA481">
+            <End Role="TipoGestion" EntitySet="TipoGestion" />
+            <End Role="UNIVERSIDAD" EntitySet="UNIVERSIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UNIVERSID__id_Mo__6383C8BA" Association="Self.FK__UNIVERSID__id_Mo__6383C8BA">
+            <End Role="Modalidad_Creacion" EntitySet="Modalidad_Creacion" />
+            <End Role="UNIVERSIDAD" EntitySet="UNIVERSIDAD" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SUNEDUModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACCESO">
+          <Key>
+            <PropertyRef Name="id_Acceso" />
+          </Key>
+          <Property Name="id_Acceso" Type="String" MaxLength="18" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Paswoord" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="UNIVERSIDAD" Relationship="Self.FK__UNIVERSID__id_Ac__5CD6CB2B" FromRole="ACCESO" ToRole="UNIVERSIDAD" />
+        </EntityType>
+        <EntityType Name="Autorizacion">
+          <Key>
+            <PropertyRef Name="id_Autorizacion" />
+          </Key>
+          <Property Name="id_Autorizacion" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionAutorizacion" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UNIVERSIDAD" Relationship="Self.FK__UNIVERSID__id_Au__619B8048" FromRole="Autorizacion" ToRole="UNIVERSIDAD" />
+        </EntityType>
+        <EntityType Name="BOLSA_TRABAJO">
+          <Key>
+            <PropertyRef Name="id_Bolsa" />
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Bolsa" Type="Int32" Nullable="false" />
+          <Property Name="EnteEncargado" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="PortalWebBolsa" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="id_Documento" Type="Int32" Nullable="false" />
+          <Property Name="NombreBolsa" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Documento_Bolsa" Relationship="Self.FK__BOLSA_TRA__id_Do__4316F928" FromRole="BOLSA_TRABAJO" ToRole="Documento_Bolsa" />
+        </EntityType>
+        <EntityType Name="Carrera">
+          <Key>
+            <PropertyRef Name="id_Carrera" />
+          </Key>
+          <Property Name="id_Carrera" Type="Int32" Nullable="false" />
+          <Property Name="NombreCarrera" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CategoriaXCarrera" Relationship="Self.FK__Categoria__id_Ca__46E78A0C" FromRole="Carrera" ToRole="CategoriaXCarrera" />
+          <NavigationProperty Name="ProgramasXCarrera" Relationship="Self.FK__Programas__id_Ca__52593CB8" FromRole="Carrera" ToRole="ProgramasXCarrera" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="id_Categoria" />
+          </Key>
+          <Property Name="id_Categoria" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionCat" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Categoria_Docentes" Relationship="Self.FK__Categoria__id_Ca__440B1D61" FromRole="Categoria" ToRole="Categoria_Docentes" />
+        </EntityType>
+        <EntityType Name="Categoria_Docentes">
+          <Key>
+            <PropertyRef Name="id_Categoria" />
+            <PropertyRef Name="id_Docente" />
+          </Key>
+          <Property Name="id_Categoria" Type="Int32" Nullable="false" />
+          <Property Name="id_Docente" Type="Int32" Nullable="false" />
+          <Property Name="ObservacionesCat" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Categoria" Relationship="Self.FK__Categoria__id_Ca__440B1D61" FromRole="Categoria_Docentes" ToRole="Categoria" />
+        </EntityType>
+        <EntityType Name="CategoriaXCarrera">
+          <Key>
+            <PropertyRef Name="id_TipCarrera" />
+            <PropertyRef Name="id_Carrera" />
+          </Key>
+          <Property Name="id_TipCarrera" Type="Int32" Nullable="false" />
+          <Property Name="id_Carrera" Type="Int32" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Carrera" Relationship="Self.FK__Categoria__id_Ca__46E78A0C" FromRole="CategoriaXCarrera" ToRole="Carrera" />
+          <NavigationProperty Name="Tipo_Categoria" Relationship="Self.FK__Categoria__id_Ti__45F365D3" FromRole="CategoriaXCarrera" ToRole="Tipo_Categoria" />
+        </EntityType>
+        <EntityType Name="DOCENTE">
+          <Key>
+            <PropertyRef Name="id_Docente" />
+            <PropertyRef Name="id_TipDocente" />
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Docente" Type="Int32" Nullable="false" />
+          <Property Name="Nombres" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido_Paterno" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Nacimiento" Type="DateTime" Precision="0" />
+          <Property Name="Apellido_Materno" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Nacionalidad" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="DNI_CarnetExtranjeria" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="TiempoDocencia" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="id_TipDocente" Type="Int32" Nullable="false" />
+          <Property Name="id_Documento" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Documentos_Docente" Relationship="Self.FK__DOCENTE__id_Docu__48CFD27E" FromRole="DOCENTE" ToRole="Documentos_Docente" />
+          <NavigationProperty Name="Tipo_Docente" Relationship="Self.FK__DOCENTE__id_TipD__47DBAE45" FromRole="DOCENTE" ToRole="Tipo_Docente" />
+        </EntityType>
+        <EntityType Name="DocenteXSede">
+          <Key>
+            <PropertyRef Name="id_Docente" />
+            <PropertyRef Name="id_Sede" />
+          </Key>
+          <Property Name="id_Docente" Type="Int32" Nullable="false" />
+          <Property Name="id_Sede" Type="Int32" Nullable="false" />
+          <Property Name="TiempoEnSede" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Documento_Bolsa">
+          <Key>
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Documento" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionDocBolsa" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="ArchivoBolsa" Type="Binary" MaxLength="225" FixedLength="false" />
+          <NavigationProperty Name="BOLSA_TRABAJO" Relationship="Self.FK__BOLSA_TRA__id_Do__4316F928" FromRole="Documento_Bolsa" ToRole="BOLSA_TRABAJO" />
+        </EntityType>
+        <EntityType Name="Documento_Servicio">
+          <Key>
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Documento" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionDocServicio" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="ArchivoDocServ" Type="Binary" MaxLength="225" FixedLength="false" />
+          <NavigationProperty Name="SERVICIOS_COMPLEMENTARIOS" Relationship="Self.FK__SERVICIOS__id_Do__59063A47" FromRole="Documento_Servicio" ToRole="SERVICIOS_COMPLEMENTARIOS" />
+        </EntityType>
+        <EntityType Name="Documento_Transparencia">
+          <Key>
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Documento" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionDocTransp" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="ArchivoTransp" Type="Binary" MaxLength="225" FixedLength="false" />
+          <NavigationProperty Name="TRANSPARENCIA" Relationship="Self.FK__TRANSPARE__id_Do__5BE2A6F2" FromRole="Documento_Transparencia" ToRole="TRANSPARENCIA" />
+        </EntityType>
+        <EntityType Name="Documentos_Docente">
+          <Key>
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Documento" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionDoc" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Archivo" Type="Binary" MaxLength="225" FixedLength="false" />
+          <NavigationProperty Name="DOCENTE" Relationship="Self.FK__DOCENTE__id_Docu__48CFD27E" FromRole="Documentos_Docente" ToRole="DOCENTE" />
+        </EntityType>
+        <EntityType Name="Documentos_Investigacion">
+          <Key>
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Documento" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionDocInvest" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="ArchivoDocInvest" Type="Binary" MaxLength="225" FixedLength="false" />
+          <NavigationProperty Name="INVESTIGACION" Relationship="Self.FK__INVESTIGA__id_Do__4E88ABD4" FromRole="Documentos_Investigacion" ToRole="INVESTIGACION" />
+        </EntityType>
+        <EntityType Name="Documentos_Universidad">
+          <Key>
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Documento" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionDoc" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Archivo" Type="Binary" MaxLength="225" FixedLength="false" />
+          <Property Name="FechaDocumento" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="UNIVERSIDAD" Relationship="Self.FK__UNIVERSID__id_Do__60A75C0F" FromRole="Documentos_Universidad" ToRole="UNIVERSIDAD" />
+        </EntityType>
+        <EntityType Name="FINANZAS">
+          <Key>
+            <PropertyRef Name="id_Finanzas" />
+          </Key>
+          <Property Name="id_Finanzas" Type="Int32" Nullable="false" />
+          <Property Name="NombreDocumentoFinanz" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="ArchivoFinanzas" Type="Binary" MaxLength="225" FixedLength="false" />
+          <NavigationProperty Name="UNIVERSIDAD" Relationship="Self.FK__UNIVERSID__id_Fi__68487DD7" FromRole="FINANZAS" ToRole="UNIVERSIDAD" />
+        </EntityType>
+        <EntityType Name="Grado">
+          <Key>
+            <PropertyRef Name="id_Grado" />
+            <PropertyRef Name="DescripcionGrado" />
+          </Key>
+          <Property Name="id_Grado" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionGrado" Type="String" MaxLength="225" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grado_Docente">
+          <Key>
+            <PropertyRef Name="id_Grado" />
+            <PropertyRef Name="id_Docente" />
+          </Key>
+          <Property Name="id_Grado" Type="Int32" Nullable="false" />
+          <Property Name="id_Docente" Type="Int32" Nullable="false" />
+          <Property Name="ObservacionesGrad" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tip_Grado" Relationship="Self.FK__Tip_Grado__5AEE82B9" FromRole="Grado_Docente" ToRole="Tip_Grado" />
+        </EntityType>
+        <EntityType Name="INVESTIGACION">
+          <Key>
+            <PropertyRef Name="id_Investigación" />
+            <PropertyRef Name="Id_Proyecto" />
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Investigación" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionInv" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Id_Proyecto" Type="Int32" Nullable="false" />
+          <Property Name="id_Documento" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Documentos_Investigacion" Relationship="Self.FK__INVESTIGA__id_Do__4E88ABD4" FromRole="INVESTIGACION" ToRole="Documentos_Investigacion" />
+          <NavigationProperty Name="Proyectos" Relationship="Self.FK__INVESTIGA__Id_Pr__4D94879B" FromRole="INVESTIGACION" ToRole="Proyectos" />
+        </EntityType>
+        <EntityType Name="InvestigacionXDocente">
+          <Key>
+            <PropertyRef Name="id_Docente" />
+            <PropertyRef Name="id_Investigación" />
+          </Key>
+          <Property Name="id_Docente" Type="Int32" Nullable="false" />
+          <Property Name="id_Investigación" Type="Int32" Nullable="false" />
+          <Property Name="EstadoInvestigacion" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Localidad">
+          <Key>
+            <PropertyRef Name="id_localidad" />
+          </Key>
+          <Property Name="id_localidad" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionLocalidad" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SEDE" Relationship="Self.FK__SEDE__id_localid__571DF1D5" FromRole="Localidad" ToRole="SEDE" />
+        </EntityType>
+        <EntityType Name="Modalidad_Creacion">
+          <Key>
+            <PropertyRef Name="id_ModCreacion" />
+          </Key>
+          <Property Name="id_ModCreacion" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionModalidad" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UNIVERSIDAD" Relationship="Self.FK__UNIVERSID__id_Mo__6383C8BA" FromRole="Modalidad_Creacion" ToRole="UNIVERSIDAD" />
+        </EntityType>
+        <EntityType Name="Periodo_Academico">
+          <Key>
+            <PropertyRef Name="id_PerAcademico" />
+          </Key>
+          <Property Name="id_PerAcademico" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionPerAcad" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PROGRAMA" Relationship="Self.FK__PROGRAMA__id_Per__5165187F" FromRole="Periodo_Academico" ToRole="PROGRAMA" />
+        </EntityType>
+        <EntityType Name="PROGRAMA">
+          <Key>
+            <PropertyRef Name="id_Programa" />
+            <PropertyRef Name="id_PerAcademico" />
+          </Key>
+          <Property Name="id_Programa" Type="Int32" Nullable="false" />
+          <Property Name="NombrePrograma" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="id_PerAcademico" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacionProg" Type="DateTime" Precision="3" />
+          <Property Name="CodigoPrograma" Type="Int32" />
+          <Property Name="Modalidad" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Periodo_Academico" Relationship="Self.FK__PROGRAMA__id_Per__5165187F" FromRole="PROGRAMA" ToRole="Periodo_Academico" />
+        </EntityType>
+        <EntityType Name="ProgramasXCarrera">
+          <Key>
+            <PropertyRef Name="id_Carrera" />
+            <PropertyRef Name="id_Programa" />
+            <PropertyRef Name="id_Docente" />
+          </Key>
+          <Property Name="id_Carrera" Type="Int32" Nullable="false" />
+          <Property Name="id_Programa" Type="Int32" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Precision="3" />
+          <Property Name="id_Docente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Carrera" Relationship="Self.FK__Programas__id_Ca__52593CB8" FromRole="ProgramasXCarrera" ToRole="Carrera" />
+        </EntityType>
+        <EntityType Name="ProgramaXSede">
+          <Key>
+            <PropertyRef Name="id_Sede" />
+            <PropertyRef Name="id_Programa" />
+          </Key>
+          <Property Name="id_Sede" Type="Int32" Nullable="false" />
+          <Property Name="id_Programa" Type="Int32" Nullable="false" />
+          <Property Name="Duracion" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="ObservacionesProgXSed" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Proyectos">
+          <Key>
+            <PropertyRef Name="Id_Proyecto" />
+          </Key>
+          <Property Name="Id_Proyecto" Type="Int32" Nullable="false" />
+          <Property Name="DescripciónProy" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="INVESTIGACION" Relationship="Self.FK__INVESTIGA__Id_Pr__4D94879B" FromRole="Proyectos" ToRole="INVESTIGACION" />
+        </EntityType>
+        <EntityType Name="SEDE">
+          <Key>
+            <PropertyRef Name="id_Sede" />
+            <PropertyRef Name="id_SedeCentral" />
+            <PropertyRef Name="id_localidad" />
+          </Key>
+          <Property Name="id_Sede" Type="Int32" Nullable="false" />
+          <Property Name="id_SedeCentral" Type="Int32" Nullable="false" />
+          <Property Name="id_localidad" Type="Int32" Nullable="false" />
+          <Property Name="NombreSede" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadLaboratorios" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadTalleres" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadAmbientesParaDocentes" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadAulas" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadBibliotecas" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadAuditorio" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadCanchasDeportivas" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadSalasEstudio" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadSalasInvest" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadAcervoBibliog" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Jerarquia" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="FechaPrimerPA" Type="DateTime" Precision="3" />
+          <Property Name="CantidadEstudiantes" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="NombreFacultad" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroLocal" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoLocal" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Localidad" Relationship="Self.FK__SEDE__id_localid__571DF1D5" FromRole="SEDE" ToRole="Localidad" />
+        </EntityType>
+        <EntityType Name="SERVICIOS_COMPLEMENTARIOS">
+          <Key>
+            <PropertyRef Name="id_Servicios" />
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Servicios" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionServicio" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroDeServicios" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="id_Documento" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Documento_Servicio" Relationship="Self.FK__SERVICIOS__id_Do__59063A47" FromRole="SERVICIOS_COMPLEMENTARIOS" ToRole="Documento_Servicio" />
+        </EntityType>
+        <EntityType Name="Tip_Grado">
+          <Key>
+            <PropertyRef Name="id_TipDocente" />
+            <PropertyRef Name="id_Docente" />
+            <PropertyRef Name="id_Grado" />
+          </Key>
+          <Property Name="id_TipDocente" Type="Int32" Nullable="false" />
+          <Property Name="ObsTipGrado" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="id_Docente" Type="Int32" Nullable="false" />
+          <Property Name="id_Grado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Grado_Docente" Relationship="Self.FK__Tip_Grado__5AEE82B9" FromRole="Tip_Grado" ToRole="Grado_Docente" />
+          <NavigationProperty Name="Tipo_Docente" Relationship="Self.FK__Tip_Grado__id_Ti__59FA5E80" FromRole="Tip_Grado" ToRole="Tipo_Docente" />
+        </EntityType>
+        <EntityType Name="Tipo_Categoria">
+          <Key>
+            <PropertyRef Name="id_TipCarrera" />
+          </Key>
+          <Property Name="id_TipCarrera" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionTipCarrera" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CategoriaXCarrera" Relationship="Self.FK__Categoria__id_Ti__45F365D3" FromRole="Tipo_Categoria" ToRole="CategoriaXCarrera" />
+        </EntityType>
+        <EntityType Name="Tipo_Docente">
+          <Key>
+            <PropertyRef Name="id_TipDocente" />
+          </Key>
+          <Property Name="id_TipDocente" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionTipo" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DOCENTE" Relationship="Self.FK__DOCENTE__id_TipD__47DBAE45" FromRole="Tipo_Docente" ToRole="DOCENTE" />
+          <NavigationProperty Name="Tip_Grado" Relationship="Self.FK__Tip_Grado__id_Ti__59FA5E80" FromRole="Tipo_Docente" ToRole="Tip_Grado" />
+        </EntityType>
+        <EntityType Name="TipoGestion">
+          <Key>
+            <PropertyRef Name="id_Gestion" />
+          </Key>
+          <Property Name="id_Gestion" Type="Int32" Nullable="false" />
+          <Property Name="DescripcionGestion" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UNIVERSIDAD" Relationship="Self.FK__UNIVERSID__id_Ge__628FA481" FromRole="TipoGestion" ToRole="UNIVERSIDAD" />
+        </EntityType>
+        <EntityType Name="TRANSPARENCIA">
+          <Key>
+            <PropertyRef Name="id_Transparencia" />
+            <PropertyRef Name="id_Documento" />
+          </Key>
+          <Property Name="id_Transparencia" Type="Int32" Nullable="false" />
+          <Property Name="PortalWeb" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Mision" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Vision" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="id_Documento" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Documento_Transparencia" Relationship="Self.FK__TRANSPARE__id_Do__5BE2A6F2" FromRole="TRANSPARENCIA" ToRole="Documento_Transparencia" />
+        </EntityType>
+        <EntityType Name="UNIVERSIDAD">
+          <Key>
+            <PropertyRef Name="id_Universidad" />
+            <PropertyRef Name="id_Acceso" />
+            <PropertyRef Name="id_Investigación" />
+            <PropertyRef Name="id_Docente" />
+            <PropertyRef Name="id_Programa" />
+            <PropertyRef Name="id_Documento" />
+            <PropertyRef Name="id_Autorizacion" />
+            <PropertyRef Name="id_Gestion" />
+            <PropertyRef Name="id_ModCreacion" />
+            <PropertyRef Name="id_Sede" />
+            <PropertyRef Name="id_Servicios" />
+            <PropertyRef Name="id_Bolsa" />
+            <PropertyRef Name="id_Transparencia" />
+            <PropertyRef Name="id_Finanzas" />
+          </Key>
+          <Property Name="id_Universidad" Type="Int32" Nullable="false" />
+          <Property Name="id_Acceso" Type="String" MaxLength="18" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="id_Investigación" Type="Int32" Nullable="false" />
+          <Property Name="id_Docente" Type="Int32" Nullable="false" />
+          <Property Name="id_Programa" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="NRuc" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="RazonSocial" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="id_Documento" Type="Int32" Nullable="false" />
+          <Property Name="id_Autorizacion" Type="Int32" Nullable="false" />
+          <Property Name="id_Gestion" Type="Int32" Nullable="false" />
+          <Property Name="id_ModCreacion" Type="Int32" Nullable="false" />
+          <Property Name="id_Sede" Type="Int32" Nullable="false" />
+          <Property Name="id_Servicios" Type="Int32" Nullable="false" />
+          <Property Name="id_Bolsa" Type="Int32" Nullable="false" />
+          <Property Name="id_Transparencia" Type="Int32" Nullable="false" />
+          <Property Name="id_Finanzas" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ACCESO" Relationship="Self.FK__UNIVERSID__id_Ac__5CD6CB2B" FromRole="UNIVERSIDAD" ToRole="ACCESO" />
+          <NavigationProperty Name="Autorizacion" Relationship="Self.FK__UNIVERSID__id_Au__619B8048" FromRole="UNIVERSIDAD" ToRole="Autorizacion" />
+          <NavigationProperty Name="Documentos_Universidad" Relationship="Self.FK__UNIVERSID__id_Do__60A75C0F" FromRole="UNIVERSIDAD" ToRole="Documentos_Universidad" />
+          <NavigationProperty Name="FINANZAS" Relationship="Self.FK__UNIVERSID__id_Fi__68487DD7" FromRole="UNIVERSIDAD" ToRole="FINANZAS" />
+          <NavigationProperty Name="Modalidad_Creacion" Relationship="Self.FK__UNIVERSID__id_Mo__6383C8BA" FromRole="UNIVERSIDAD" ToRole="Modalidad_Creacion" />
+          <NavigationProperty Name="TipoGestion" Relationship="Self.FK__UNIVERSID__id_Ge__628FA481" FromRole="UNIVERSIDAD" ToRole="TipoGestion" />
+        </EntityType>
+        <Association Name="FK__UNIVERSID__id_Ac__5CD6CB2B">
+          <End Role="ACCESO" Type="Self.ACCESO" Multiplicity="1" />
+          <End Role="UNIVERSIDAD" Type="Self.UNIVERSIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCESO">
+              <PropertyRef Name="id_Acceso" />
+            </Principal>
+            <Dependent Role="UNIVERSIDAD">
+              <PropertyRef Name="id_Acceso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UNIVERSID__id_Au__619B8048">
+          <End Role="Autorizacion" Type="Self.Autorizacion" Multiplicity="1" />
+          <End Role="UNIVERSIDAD" Type="Self.UNIVERSIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Autorizacion">
+              <PropertyRef Name="id_Autorizacion" />
+            </Principal>
+            <Dependent Role="UNIVERSIDAD">
+              <PropertyRef Name="id_Autorizacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BOLSA_TRA__id_Do__4316F928">
+          <End Role="Documento_Bolsa" Type="Self.Documento_Bolsa" Multiplicity="1" />
+          <End Role="BOLSA_TRABAJO" Type="Self.BOLSA_TRABAJO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documento_Bolsa">
+              <PropertyRef Name="id_Documento" />
+            </Principal>
+            <Dependent Role="BOLSA_TRABAJO">
+              <PropertyRef Name="id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Categoria__id_Ca__46E78A0C">
+          <End Role="Carrera" Type="Self.Carrera" Multiplicity="1" />
+          <End Role="CategoriaXCarrera" Type="Self.CategoriaXCarrera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrera">
+              <PropertyRef Name="id_Carrera" />
+            </Principal>
+            <Dependent Role="CategoriaXCarrera">
+              <PropertyRef Name="id_Carrera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Programas__id_Ca__52593CB8">
+          <End Role="Carrera" Type="Self.Carrera" Multiplicity="1" />
+          <End Role="ProgramasXCarrera" Type="Self.ProgramasXCarrera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrera">
+              <PropertyRef Name="id_Carrera" />
+            </Principal>
+            <Dependent Role="ProgramasXCarrera">
+              <PropertyRef Name="id_Carrera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Categoria__id_Ca__440B1D61">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+          <End Role="Categoria_Docentes" Type="Self.Categoria_Docentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="id_Categoria" />
+            </Principal>
+            <Dependent Role="Categoria_Docentes">
+              <PropertyRef Name="id_Categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Categoria__id_Ti__45F365D3">
+          <End Role="Tipo_Categoria" Type="Self.Tipo_Categoria" Multiplicity="1" />
+          <End Role="CategoriaXCarrera" Type="Self.CategoriaXCarrera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Categoria">
+              <PropertyRef Name="id_TipCarrera" />
+            </Principal>
+            <Dependent Role="CategoriaXCarrera">
+              <PropertyRef Name="id_TipCarrera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DOCENTE__id_Docu__48CFD27E">
+          <End Role="Documentos_Docente" Type="Self.Documentos_Docente" Multiplicity="1" />
+          <End Role="DOCENTE" Type="Self.DOCENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documentos_Docente">
+              <PropertyRef Name="id_Documento" />
+            </Principal>
+            <Dependent Role="DOCENTE">
+              <PropertyRef Name="id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DOCENTE__id_TipD__47DBAE45">
+          <End Role="Tipo_Docente" Type="Self.Tipo_Docente" Multiplicity="1" />
+          <End Role="DOCENTE" Type="Self.DOCENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Docente">
+              <PropertyRef Name="id_TipDocente" />
+            </Principal>
+            <Dependent Role="DOCENTE">
+              <PropertyRef Name="id_TipDocente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SERVICIOS__id_Do__59063A47">
+          <End Role="Documento_Servicio" Type="Self.Documento_Servicio" Multiplicity="1" />
+          <End Role="SERVICIOS_COMPLEMENTARIOS" Type="Self.SERVICIOS_COMPLEMENTARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documento_Servicio">
+              <PropertyRef Name="id_Documento" />
+            </Principal>
+            <Dependent Role="SERVICIOS_COMPLEMENTARIOS">
+              <PropertyRef Name="id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TRANSPARE__id_Do__5BE2A6F2">
+          <End Role="Documento_Transparencia" Type="Self.Documento_Transparencia" Multiplicity="1" />
+          <End Role="TRANSPARENCIA" Type="Self.TRANSPARENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documento_Transparencia">
+              <PropertyRef Name="id_Documento" />
+            </Principal>
+            <Dependent Role="TRANSPARENCIA">
+              <PropertyRef Name="id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__INVESTIGA__id_Do__4E88ABD4">
+          <End Role="Documentos_Investigacion" Type="Self.Documentos_Investigacion" Multiplicity="1" />
+          <End Role="INVESTIGACION" Type="Self.INVESTIGACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documentos_Investigacion">
+              <PropertyRef Name="id_Documento" />
+            </Principal>
+            <Dependent Role="INVESTIGACION">
+              <PropertyRef Name="id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UNIVERSID__id_Do__60A75C0F">
+          <End Role="Documentos_Universidad" Type="Self.Documentos_Universidad" Multiplicity="1" />
+          <End Role="UNIVERSIDAD" Type="Self.UNIVERSIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documentos_Universidad">
+              <PropertyRef Name="id_Documento" />
+            </Principal>
+            <Dependent Role="UNIVERSIDAD">
+              <PropertyRef Name="id_Documento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UNIVERSID__id_Fi__68487DD7">
+          <End Role="FINANZAS" Type="Self.FINANZAS" Multiplicity="1" />
+          <End Role="UNIVERSIDAD" Type="Self.UNIVERSIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FINANZAS">
+              <PropertyRef Name="id_Finanzas" />
+            </Principal>
+            <Dependent Role="UNIVERSIDAD">
+              <PropertyRef Name="id_Finanzas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tip_Grado__5AEE82B9">
+          <End Role="Grado_Docente" Type="Self.Grado_Docente" Multiplicity="1" />
+          <End Role="Tip_Grado" Type="Self.Tip_Grado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grado_Docente">
+              <PropertyRef Name="id_Docente" />
+              <PropertyRef Name="id_Grado" />
+            </Principal>
+            <Dependent Role="Tip_Grado">
+              <PropertyRef Name="id_Docente" />
+              <PropertyRef Name="id_Grado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__INVESTIGA__Id_Pr__4D94879B">
+          <End Role="Proyectos" Type="Self.Proyectos" Multiplicity="1" />
+          <End Role="INVESTIGACION" Type="Self.INVESTIGACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyectos">
+              <PropertyRef Name="Id_Proyecto" />
+            </Principal>
+            <Dependent Role="INVESTIGACION">
+              <PropertyRef Name="Id_Proyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SEDE__id_localid__571DF1D5">
+          <End Role="Localidad" Type="Self.Localidad" Multiplicity="1" />
+          <End Role="SEDE" Type="Self.SEDE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidad">
+              <PropertyRef Name="id_localidad" />
+            </Principal>
+            <Dependent Role="SEDE">
+              <PropertyRef Name="id_localidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UNIVERSID__id_Mo__6383C8BA">
+          <End Role="Modalidad_Creacion" Type="Self.Modalidad_Creacion" Multiplicity="1" />
+          <End Role="UNIVERSIDAD" Type="Self.UNIVERSIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modalidad_Creacion">
+              <PropertyRef Name="id_ModCreacion" />
+            </Principal>
+            <Dependent Role="UNIVERSIDAD">
+              <PropertyRef Name="id_ModCreacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PROGRAMA__id_Per__5165187F">
+          <End Role="Periodo_Academico" Type="Self.Periodo_Academico" Multiplicity="1" />
+          <End Role="PROGRAMA" Type="Self.PROGRAMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periodo_Academico">
+              <PropertyRef Name="id_PerAcademico" />
+            </Principal>
+            <Dependent Role="PROGRAMA">
+              <PropertyRef Name="id_PerAcademico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tip_Grado__id_Ti__59FA5E80">
+          <End Role="Tipo_Docente" Type="Self.Tipo_Docente" Multiplicity="1" />
+          <End Role="Tip_Grado" Type="Self.Tip_Grado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Docente">
+              <PropertyRef Name="id_TipDocente" />
+            </Principal>
+            <Dependent Role="Tip_Grado">
+              <PropertyRef Name="id_TipDocente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UNIVERSID__id_Ge__628FA481">
+          <End Role="TipoGestion" Type="Self.TipoGestion" Multiplicity="1" />
+          <End Role="UNIVERSIDAD" Type="Self.UNIVERSIDAD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoGestion">
+              <PropertyRef Name="id_Gestion" />
+            </Principal>
+            <Dependent Role="UNIVERSIDAD">
+              <PropertyRef Name="id_Gestion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SUNEDU" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACCESO" EntityType="Self.ACCESO" />
+          <EntitySet Name="Autorizacion" EntityType="Self.Autorizacion" />
+          <EntitySet Name="BOLSA_TRABAJO" EntityType="Self.BOLSA_TRABAJO" />
+          <EntitySet Name="Carrera" EntityType="Self.Carrera" />
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" />
+          <EntitySet Name="Categoria_Docentes" EntityType="Self.Categoria_Docentes" />
+          <EntitySet Name="CategoriaXCarrera" EntityType="Self.CategoriaXCarrera" />
+          <EntitySet Name="DOCENTE" EntityType="Self.DOCENTE" />
+          <EntitySet Name="DocenteXSede" EntityType="Self.DocenteXSede" />
+          <EntitySet Name="Documento_Bolsa" EntityType="Self.Documento_Bolsa" />
+          <EntitySet Name="Documento_Servicio" EntityType="Self.Documento_Servicio" />
+          <EntitySet Name="Documento_Transparencia" EntityType="Self.Documento_Transparencia" />
+          <EntitySet Name="Documentos_Docente" EntityType="Self.Documentos_Docente" />
+          <EntitySet Name="Documentos_Investigacion" EntityType="Self.Documentos_Investigacion" />
+          <EntitySet Name="Documentos_Universidad" EntityType="Self.Documentos_Universidad" />
+          <EntitySet Name="FINANZAS" EntityType="Self.FINANZAS" />
+          <EntitySet Name="Grado" EntityType="Self.Grado" />
+          <EntitySet Name="Grado_Docente" EntityType="Self.Grado_Docente" />
+          <EntitySet Name="INVESTIGACION" EntityType="Self.INVESTIGACION" />
+          <EntitySet Name="InvestigacionXDocente" EntityType="Self.InvestigacionXDocente" />
+          <EntitySet Name="Localidad" EntityType="Self.Localidad" />
+          <EntitySet Name="Modalidad_Creacion" EntityType="Self.Modalidad_Creacion" />
+          <EntitySet Name="Periodo_Academico" EntityType="Self.Periodo_Academico" />
+          <EntitySet Name="PROGRAMA" EntityType="Self.PROGRAMA" />
+          <EntitySet Name="ProgramasXCarrera" EntityType="Self.ProgramasXCarrera" />
+          <EntitySet Name="ProgramaXSede" EntityType="Self.ProgramaXSede" />
+          <EntitySet Name="Proyectos" EntityType="Self.Proyectos" />
+          <EntitySet Name="SEDE" EntityType="Self.SEDE" />
+          <EntitySet Name="SERVICIOS_COMPLEMENTARIOS" EntityType="Self.SERVICIOS_COMPLEMENTARIOS" />
+          <EntitySet Name="Tip_Grado" EntityType="Self.Tip_Grado" />
+          <EntitySet Name="Tipo_Categoria" EntityType="Self.Tipo_Categoria" />
+          <EntitySet Name="Tipo_Docente" EntityType="Self.Tipo_Docente" />
+          <EntitySet Name="TipoGestion" EntityType="Self.TipoGestion" />
+          <EntitySet Name="TRANSPARENCIA" EntityType="Self.TRANSPARENCIA" />
+          <EntitySet Name="UNIVERSIDAD" EntityType="Self.UNIVERSIDAD" />
+          <AssociationSet Name="FK__UNIVERSID__id_Ac__5CD6CB2B" Association="Self.FK__UNIVERSID__id_Ac__5CD6CB2B">
+            <End Role="ACCESO" EntitySet="ACCESO" />
+            <End Role="UNIVERSIDAD" EntitySet="UNIVERSIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UNIVERSID__id_Au__619B8048" Association="Self.FK__UNIVERSID__id_Au__619B8048">
+            <End Role="Autorizacion" EntitySet="Autorizacion" />
+            <End Role="UNIVERSIDAD" EntitySet="UNIVERSIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BOLSA_TRA__id_Do__4316F928" Association="Self.FK__BOLSA_TRA__id_Do__4316F928">
+            <End Role="Documento_Bolsa" EntitySet="Documento_Bolsa" />
+            <End Role="BOLSA_TRABAJO" EntitySet="BOLSA_TRABAJO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Categoria__id_Ca__46E78A0C" Association="Self.FK__Categoria__id_Ca__46E78A0C">
+            <End Role="Carrera" EntitySet="Carrera" />
+            <End Role="CategoriaXCarrera" EntitySet="CategoriaXCarrera" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Programas__id_Ca__52593CB8" Association="Self.FK__Programas__id_Ca__52593CB8">
+            <End Role="Carrera" EntitySet="Carrera" />
+            <End Role="ProgramasXCarrera" EntitySet="ProgramasXCarrera" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Categoria__id_Ca__440B1D61" Association="Self.FK__Categoria__id_Ca__440B1D61">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Categoria_Docentes" EntitySet="Categoria_Docentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Categoria__id_Ti__45F365D3" Association="Self.FK__Categoria__id_Ti__45F365D3">
+            <End Role="Tipo_Categoria" EntitySet="Tipo_Categoria" />
+            <End Role="CategoriaXCarrera" EntitySet="CategoriaXCarrera" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DOCENTE__id_Docu__48CFD27E" Association="Self.FK__DOCENTE__id_Docu__48CFD27E">
+            <End Role="Documentos_Docente" EntitySet="Documentos_Docente" />
+            <End Role="DOCENTE" EntitySet="DOCENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DOCENTE__id_TipD__47DBAE45" Association="Self.FK__DOCENTE__id_TipD__47DBAE45">
+            <End Role="Tipo_Docente" EntitySet="Tipo_Docente" />
+            <End Role="DOCENTE" EntitySet="DOCENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SERVICIOS__id_Do__59063A47" Association="Self.FK__SERVICIOS__id_Do__59063A47">
+            <End Role="Documento_Servicio" EntitySet="Documento_Servicio" />
+            <End Role="SERVICIOS_COMPLEMENTARIOS" EntitySet="SERVICIOS_COMPLEMENTARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TRANSPARE__id_Do__5BE2A6F2" Association="Self.FK__TRANSPARE__id_Do__5BE2A6F2">
+            <End Role="Documento_Transparencia" EntitySet="Documento_Transparencia" />
+            <End Role="TRANSPARENCIA" EntitySet="TRANSPARENCIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__INVESTIGA__id_Do__4E88ABD4" Association="Self.FK__INVESTIGA__id_Do__4E88ABD4">
+            <End Role="Documentos_Investigacion" EntitySet="Documentos_Investigacion" />
+            <End Role="INVESTIGACION" EntitySet="INVESTIGACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UNIVERSID__id_Do__60A75C0F" Association="Self.FK__UNIVERSID__id_Do__60A75C0F">
+            <End Role="Documentos_Universidad" EntitySet="Documentos_Universidad" />
+            <End Role="UNIVERSIDAD" EntitySet="UNIVERSIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UNIVERSID__id_Fi__68487DD7" Association="Self.FK__UNIVERSID__id_Fi__68487DD7">
+            <End Role="FINANZAS" EntitySet="FINANZAS" />
+            <End Role="UNIVERSIDAD" EntitySet="UNIVERSIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tip_Grado__5AEE82B9" Association="Self.FK__Tip_Grado__5AEE82B9">
+            <End Role="Grado_Docente" EntitySet="Grado_Docente" />
+            <End Role="Tip_Grado" EntitySet="Tip_Grado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__INVESTIGA__Id_Pr__4D94879B" Association="Self.FK__INVESTIGA__Id_Pr__4D94879B">
+            <End Role="Proyectos" EntitySet="Proyectos" />
+            <End Role="INVESTIGACION" EntitySet="INVESTIGACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SEDE__id_localid__571DF1D5" Association="Self.FK__SEDE__id_localid__571DF1D5">
+            <End Role="Localidad" EntitySet="Localidad" />
+            <End Role="SEDE" EntitySet="SEDE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UNIVERSID__id_Mo__6383C8BA" Association="Self.FK__UNIVERSID__id_Mo__6383C8BA">
+            <End Role="Modalidad_Creacion" EntitySet="Modalidad_Creacion" />
+            <End Role="UNIVERSIDAD" EntitySet="UNIVERSIDAD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PROGRAMA__id_Per__5165187F" Association="Self.FK__PROGRAMA__id_Per__5165187F">
+            <End Role="Periodo_Academico" EntitySet="Periodo_Academico" />
+            <End Role="PROGRAMA" EntitySet="PROGRAMA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tip_Grado__id_Ti__59FA5E80" Association="Self.FK__Tip_Grado__id_Ti__59FA5E80">
+            <End Role="Tipo_Docente" EntitySet="Tipo_Docente" />
+            <End Role="Tip_Grado" EntitySet="Tip_Grado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UNIVERSID__id_Ge__628FA481" Association="Self.FK__UNIVERSID__id_Ge__628FA481">
+            <End Role="TipoGestion" EntitySet="TipoGestion" />
+            <End Role="UNIVERSIDAD" EntitySet="UNIVERSIDAD" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SUNEDUModelStoreContainer" CdmEntityContainer="SUNEDU">
+          <EntitySetMapping Name="ACCESO">
+            <EntityTypeMapping TypeName="SUNEDUModel.ACCESO">
+              <MappingFragment StoreEntitySet="ACCESO">
+                <ScalarProperty Name="id_Acceso" ColumnName="id_Acceso" />
+                <ScalarProperty Name="Paswoord" ColumnName="Paswoord" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Autorizacion">
+            <EntityTypeMapping TypeName="SUNEDUModel.Autorizacion">
+              <MappingFragment StoreEntitySet="Autorizacion">
+                <ScalarProperty Name="id_Autorizacion" ColumnName="id_Autorizacion" />
+                <ScalarProperty Name="DescripcionAutorizacion" ColumnName="DescripcionAutorizacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BOLSA_TRABAJO">
+            <EntityTypeMapping TypeName="SUNEDUModel.BOLSA_TRABAJO">
+              <MappingFragment StoreEntitySet="BOLSA_TRABAJO">
+                <ScalarProperty Name="id_Bolsa" ColumnName="id_Bolsa" />
+                <ScalarProperty Name="EnteEncargado" ColumnName="EnteEncargado" />
+                <ScalarProperty Name="PortalWebBolsa" ColumnName="PortalWebBolsa" />
+                <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+                <ScalarProperty Name="NombreBolsa" ColumnName="NombreBolsa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Carrera">
+            <EntityTypeMapping TypeName="SUNEDUModel.Carrera">
+              <MappingFragment StoreEntitySet="Carrera">
+                <ScalarProperty Name="id_Carrera" ColumnName="id_Carrera" />
+                <ScalarProperty Name="NombreCarrera" ColumnName="NombreCarrera" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categoria">
+            <EntityTypeMapping TypeName="SUNEDUModel.Categoria">
+              <MappingFragment StoreEntitySet="Categoria">
+                <ScalarProperty Name="id_Categoria" ColumnName="id_Categoria" />
+                <ScalarProperty Name="DescripcionCat" ColumnName="DescripcionCat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categoria_Docentes">
+            <EntityTypeMapping TypeName="SUNEDUModel.Categoria_Docentes">
+              <MappingFragment StoreEntitySet="Categoria_Docentes">
+                <ScalarProperty Name="id_Categoria" ColumnName="id_Categoria" />
+                <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+                <ScalarProperty Name="ObservacionesCat" ColumnName="ObservacionesCat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoriaXCarrera">
+            <EntityTypeMapping TypeName="SUNEDUModel.CategoriaXCarrera">
+              <MappingFragment StoreEntitySet="CategoriaXCarrera">
+                <ScalarProperty Name="id_TipCarrera" ColumnName="id_TipCarrera" />
+                <ScalarProperty Name="id_Carrera" ColumnName="id_Carrera" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DOCENTE">
+            <EntityTypeMapping TypeName="SUNEDUModel.DOCENTE">
+              <MappingFragment StoreEntitySet="DOCENTE">
+                <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido_Paterno" />
+                <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+                <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido_Materno" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="DNI_CarnetExtranjeria" ColumnName="DNI_CarnetExtranjeria" />
+                <ScalarProperty Name="TiempoDocencia" ColumnName="TiempoDocencia" />
+                <ScalarProperty Name="id_TipDocente" ColumnName="id_TipDocente" />
+                <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocenteXSede">
+            <EntityTypeMapping TypeName="SUNEDUModel.DocenteXSede">
+              <MappingFragment StoreEntitySet="DocenteXSede">
+                <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+                <ScalarProperty Name="id_Sede" ColumnName="id_Sede" />
+                <ScalarProperty Name="TiempoEnSede" ColumnName="TiempoEnSede" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documento_Bolsa">
+            <EntityTypeMapping TypeName="SUNEDUModel.Documento_Bolsa">
+              <MappingFragment StoreEntitySet="Documento_Bolsa">
+                <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+                <ScalarProperty Name="DescripcionDocBolsa" ColumnName="DescripcionDocBolsa" />
+                <ScalarProperty Name="ArchivoBolsa" ColumnName="ArchivoBolsa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documento_Servicio">
+            <EntityTypeMapping TypeName="SUNEDUModel.Documento_Servicio">
+              <MappingFragment StoreEntitySet="Documento_Servicio">
+                <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+                <ScalarProperty Name="DescripcionDocServicio" ColumnName="DescripcionDocServicio" />
+                <ScalarProperty Name="ArchivoDocServ" ColumnName="ArchivoDocServ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documento_Transparencia">
+            <EntityTypeMapping TypeName="SUNEDUModel.Documento_Transparencia">
+              <MappingFragment StoreEntitySet="Documento_Transparencia">
+                <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+                <ScalarProperty Name="DescripcionDocTransp" ColumnName="DescripcionDocTransp" />
+                <ScalarProperty Name="ArchivoTransp" ColumnName="ArchivoTransp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documentos_Docente">
+            <EntityTypeMapping TypeName="SUNEDUModel.Documentos_Docente">
+              <MappingFragment StoreEntitySet="Documentos_Docente">
+                <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+                <ScalarProperty Name="DescripcionDoc" ColumnName="DescripcionDoc" />
+                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documentos_Investigacion">
+            <EntityTypeMapping TypeName="SUNEDUModel.Documentos_Investigacion">
+              <MappingFragment StoreEntitySet="Documentos_Investigacion">
+                <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+                <ScalarProperty Name="DescripcionDocInvest" ColumnName="DescripcionDocInvest" />
+                <ScalarProperty Name="ArchivoDocInvest" ColumnName="ArchivoDocInvest" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documentos_Universidad">
+            <EntityTypeMapping TypeName="SUNEDUModel.Documentos_Universidad">
+              <MappingFragment StoreEntitySet="Documentos_Universidad">
+                <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+                <ScalarProperty Name="DescripcionDoc" ColumnName="DescripcionDoc" />
+                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+                <ScalarProperty Name="FechaDocumento" ColumnName="FechaDocumento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FINANZAS">
+            <EntityTypeMapping TypeName="SUNEDUModel.FINANZAS">
+              <MappingFragment StoreEntitySet="FINANZAS">
+                <ScalarProperty Name="id_Finanzas" ColumnName="id_Finanzas" />
+                <ScalarProperty Name="NombreDocumentoFinanz" ColumnName="NombreDocumentoFinanz" />
+                <ScalarProperty Name="ArchivoFinanzas" ColumnName="ArchivoFinanzas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grado">
+            <EntityTypeMapping TypeName="SUNEDUModel.Grado">
+              <MappingFragment StoreEntitySet="Grado">
+                <ScalarProperty Name="id_Grado" ColumnName="id_Grado" />
+                <ScalarProperty Name="DescripcionGrado" ColumnName="DescripcionGrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grado_Docente">
+            <EntityTypeMapping TypeName="SUNEDUModel.Grado_Docente">
+              <MappingFragment StoreEntitySet="Grado_Docente">
+                <ScalarProperty Name="id_Grado" ColumnName="id_Grado" />
+                <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+                <ScalarProperty Name="ObservacionesGrad" ColumnName="ObservacionesGrad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INVESTIGACION">
+            <EntityTypeMapping TypeName="SUNEDUModel.INVESTIGACION">
+              <MappingFragment StoreEntitySet="INVESTIGACION">
+                <ScalarProperty Name="id_Investigación" ColumnName="id_Investigación" />
+                <ScalarProperty Name="DescripcionInv" ColumnName="DescripcionInv" />
+                <ScalarProperty Name="Id_Proyecto" ColumnName="Id_Proyecto" />
+                <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvestigacionXDocente">
+            <EntityTypeMapping TypeName="SUNEDUModel.InvestigacionXDocente">
+              <MappingFragment StoreEntitySet="InvestigacionXDocente">
+                <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+                <ScalarProperty Name="id_Investigación" ColumnName="id_Investigación" />
+                <ScalarProperty Name="EstadoInvestigacion" ColumnName="EstadoInvestigacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Localidad">
+            <EntityTypeMapping TypeName="SUNEDUModel.Localidad">
+              <MappingFragment StoreEntitySet="Localidad">
+                <ScalarProperty Name="id_localidad" ColumnName="id_localidad" />
+                <ScalarProperty Name="DescripcionLocalidad" ColumnName="DescripcionLocalidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modalidad_Creacion">
+            <EntityTypeMapping TypeName="SUNEDUModel.Modalidad_Creacion">
+              <MappingFragment StoreEntitySet="Modalidad_Creacion">
+                <ScalarProperty Name="id_ModCreacion" ColumnName="id_ModCreacion" />
+                <ScalarProperty Name="DescripcionModalidad" ColumnName="DescripcionModalidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Periodo_Academico">
+            <EntityTypeMapping TypeName="SUNEDUModel.Periodo_Academico">
+              <MappingFragment StoreEntitySet="Periodo_Academico">
+                <ScalarProperty Name="id_PerAcademico" ColumnName="id_PerAcademico" />
+                <ScalarProperty Name="DescripcionPerAcad" ColumnName="DescripcionPerAcad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROGRAMA">
+            <EntityTypeMapping TypeName="SUNEDUModel.PROGRAMA">
+              <MappingFragment StoreEntitySet="PROGRAMA">
+                <ScalarProperty Name="id_Programa" ColumnName="id_Programa" />
+                <ScalarProperty Name="NombrePrograma" ColumnName="NombrePrograma" />
+                <ScalarProperty Name="id_PerAcademico" ColumnName="id_PerAcademico" />
+                <ScalarProperty Name="FechaCreacionProg" ColumnName="FechaCreacionProg" />
+                <ScalarProperty Name="CodigoPrograma" ColumnName="CodigoPrograma" />
+                <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProgramasXCarrera">
+            <EntityTypeMapping TypeName="SUNEDUModel.ProgramasXCarrera">
+              <MappingFragment StoreEntitySet="ProgramasXCarrera">
+                <ScalarProperty Name="id_Carrera" ColumnName="id_Carrera" />
+                <ScalarProperty Name="id_Programa" ColumnName="id_Programa" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProgramaXSede">
+            <EntityTypeMapping TypeName="SUNEDUModel.ProgramaXSede">
+              <MappingFragment StoreEntitySet="ProgramaXSede">
+                <ScalarProperty Name="id_Sede" ColumnName="id_Sede" />
+                <ScalarProperty Name="id_Programa" ColumnName="id_Programa" />
+                <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+                <ScalarProperty Name="ObservacionesProgXSed" ColumnName="ObservacionesProgXSed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proyectos">
+            <EntityTypeMapping TypeName="SUNEDUModel.Proyectos">
+              <MappingFragment StoreEntitySet="Proyectos">
+                <ScalarProperty Name="Id_Proyecto" ColumnName="Id_Proyecto" />
+                <ScalarProperty Name="DescripciónProy" ColumnName="DescripciónProy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEDE">
+            <EntityTypeMapping TypeName="SUNEDUModel.SEDE">
+              <MappingFragment StoreEntitySet="SEDE">
+                <ScalarProperty Name="id_Sede" ColumnName="id_Sede" />
+                <ScalarProperty Name="id_SedeCentral" ColumnName="id_SedeCentral" />
+                <ScalarProperty Name="id_localidad" ColumnName="id_localidad" />
+                <ScalarProperty Name="NombreSede" ColumnName="NombreSede" />
+                <ScalarProperty Name="CantidadLaboratorios" ColumnName="CantidadLaboratorios" />
+                <ScalarProperty Name="CantidadTalleres" ColumnName="CantidadTalleres" />
+                <ScalarProperty Name="CantidadAmbientesParaDocentes" ColumnName="CantidadAmbientesParaDocentes" />
+                <ScalarProperty Name="CantidadAulas" ColumnName="CantidadAulas" />
+                <ScalarProperty Name="CantidadBibliotecas" ColumnName="CantidadBibliotecas" />
+                <ScalarProperty Name="CantidadAuditorio" ColumnName="CantidadAuditorio" />
+                <ScalarProperty Name="CantidadCanchasDeportivas" ColumnName="CantidadCanchasDeportivas" />
+                <ScalarProperty Name="CantidadSalasEstudio" ColumnName="CantidadSalasEstudio" />
+                <ScalarProperty Name="CantidadSalasInvest" ColumnName="CantidadSalasInvest" />
+                <ScalarProperty Name="CantidadAcervoBibliog" ColumnName="CantidadAcervoBibliog" />
+                <ScalarProperty Name="Jerarquia" ColumnName="Jerarquia" />
+                <ScalarProperty Name="FechaPrimerPA" ColumnName="FechaPrimerPA" />
+                <ScalarProperty Name="CantidadEstudiantes" ColumnName="CantidadEstudiantes" />
+                <ScalarProperty Name="NombreFacultad" ColumnName="NombreFacultad" />
+                <ScalarProperty Name="NumeroLocal" ColumnName="NumeroLocal" />
+                <ScalarProperty Name="CodigoLocal" ColumnName="CodigoLocal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SERVICIOS_COMPLEMENTARIOS">
+            <EntityTypeMapping TypeName="SUNEDUModel.SERVICIOS_COMPLEMENTARIOS">
+              <MappingFragment StoreEntitySet="SERVICIOS_COMPLEMENTARIOS">
+                <ScalarProperty Name="id_Servicios" ColumnName="id_Servicios" />
+                <ScalarProperty Name="DescripcionServicio" ColumnName="DescripcionServicio" />
+                <ScalarProperty Name="NumeroDeServicios" ColumnName="NumeroDeServicios" />
+                <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tip_Grado">
+            <EntityTypeMapping TypeName="SUNEDUModel.Tip_Grado">
+              <MappingFragment StoreEntitySet="Tip_Grado">
+                <ScalarProperty Name="id_TipDocente" ColumnName="id_TipDocente" />
+                <ScalarProperty Name="ObsTipGrado" ColumnName="ObsTipGrado" />
+                <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+                <ScalarProperty Name="id_Grado" ColumnName="id_Grado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Categoria">
+            <EntityTypeMapping TypeName="SUNEDUModel.Tipo_Categoria">
+              <MappingFragment StoreEntitySet="Tipo_Categoria">
+                <ScalarProperty Name="id_TipCarrera" ColumnName="id_TipCarrera" />
+                <ScalarProperty Name="DescripcionTipCarrera" ColumnName="DescripcionTipCarrera" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Docente">
+            <EntityTypeMapping TypeName="SUNEDUModel.Tipo_Docente">
+              <MappingFragment StoreEntitySet="Tipo_Docente">
+                <ScalarProperty Name="id_TipDocente" ColumnName="id_TipDocente" />
+                <ScalarProperty Name="DescripcionTipo" ColumnName="DescripcionTipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoGestion">
+            <EntityTypeMapping TypeName="SUNEDUModel.TipoGestion">
+              <MappingFragment StoreEntitySet="TipoGestion">
+                <ScalarProperty Name="id_Gestion" ColumnName="id_Gestion" />
+                <ScalarProperty Name="DescripcionGestion" ColumnName="DescripcionGestion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANSPARENCIA">
+            <EntityTypeMapping TypeName="SUNEDUModel.TRANSPARENCIA">
+              <MappingFragment StoreEntitySet="TRANSPARENCIA">
+                <ScalarProperty Name="id_Transparencia" ColumnName="id_Transparencia" />
+                <ScalarProperty Name="PortalWeb" ColumnName="PortalWeb" />
+                <ScalarProperty Name="Mision" ColumnName="Mision" />
+                <ScalarProperty Name="Vision" ColumnName="Vision" />
+                <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UNIVERSIDAD">
+            <EntityTypeMapping TypeName="SUNEDUModel.UNIVERSIDAD">
+              <MappingFragment StoreEntitySet="UNIVERSIDAD">
+                <ScalarProperty Name="id_Universidad" ColumnName="id_Universidad" />
+                <ScalarProperty Name="id_Acceso" ColumnName="id_Acceso" />
+                <ScalarProperty Name="id_Investigación" ColumnName="id_Investigación" />
+                <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+                <ScalarProperty Name="id_Programa" ColumnName="id_Programa" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="NRuc" ColumnName="NRuc" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+                <ScalarProperty Name="id_Autorizacion" ColumnName="id_Autorizacion" />
+                <ScalarProperty Name="id_Gestion" ColumnName="id_Gestion" />
+                <ScalarProperty Name="id_ModCreacion" ColumnName="id_ModCreacion" />
+                <ScalarProperty Name="id_Sede" ColumnName="id_Sede" />
+                <ScalarProperty Name="id_Servicios" ColumnName="id_Servicios" />
+                <ScalarProperty Name="id_Bolsa" ColumnName="id_Bolsa" />
+                <ScalarProperty Name="id_Transparencia" ColumnName="id_Transparencia" />
+                <ScalarProperty Name="id_Finanzas" ColumnName="id_Finanzas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

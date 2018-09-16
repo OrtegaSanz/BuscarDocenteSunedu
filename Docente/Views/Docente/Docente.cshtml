@@ -1,0 +1,13 @@
+﻿
+@{
+	ViewBag.Title = "Docente";
+}
+
+<h2>Docente</h2>
+@using (Html.BeginForm()){
+	<div class="form-group">
+		@Html.Label("DNI:");
+		@Html.TextBox("txtDNI")
+	</div>
+	<input type="submit"/>
+}

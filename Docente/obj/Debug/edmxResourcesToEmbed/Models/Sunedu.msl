@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SUNEDUModelStoreContainer" CdmEntityContainer="SUNEDU">
+    <EntitySetMapping Name="ACCESO">
+      <EntityTypeMapping TypeName="SUNEDUModel.ACCESO">
+        <MappingFragment StoreEntitySet="ACCESO">
+          <ScalarProperty Name="id_Acceso" ColumnName="id_Acceso" />
+          <ScalarProperty Name="Paswoord" ColumnName="Paswoord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Autorizacion">
+      <EntityTypeMapping TypeName="SUNEDUModel.Autorizacion">
+        <MappingFragment StoreEntitySet="Autorizacion">
+          <ScalarProperty Name="id_Autorizacion" ColumnName="id_Autorizacion" />
+          <ScalarProperty Name="DescripcionAutorizacion" ColumnName="DescripcionAutorizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BOLSA_TRABAJO">
+      <EntityTypeMapping TypeName="SUNEDUModel.BOLSA_TRABAJO">
+        <MappingFragment StoreEntitySet="BOLSA_TRABAJO">
+          <ScalarProperty Name="id_Bolsa" ColumnName="id_Bolsa" />
+          <ScalarProperty Name="EnteEncargado" ColumnName="EnteEncargado" />
+          <ScalarProperty Name="PortalWebBolsa" ColumnName="PortalWebBolsa" />
+          <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+          <ScalarProperty Name="NombreBolsa" ColumnName="NombreBolsa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carrera">
+      <EntityTypeMapping TypeName="SUNEDUModel.Carrera">
+        <MappingFragment StoreEntitySet="Carrera">
+          <ScalarProperty Name="id_Carrera" ColumnName="id_Carrera" />
+          <ScalarProperty Name="NombreCarrera" ColumnName="NombreCarrera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="SUNEDUModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="id_Categoria" ColumnName="id_Categoria" />
+          <ScalarProperty Name="DescripcionCat" ColumnName="DescripcionCat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categoria_Docentes">
+      <EntityTypeMapping TypeName="SUNEDUModel.Categoria_Docentes">
+        <MappingFragment StoreEntitySet="Categoria_Docentes">
+          <ScalarProperty Name="id_Categoria" ColumnName="id_Categoria" />
+          <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+          <ScalarProperty Name="ObservacionesCat" ColumnName="ObservacionesCat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoriaXCarrera">
+      <EntityTypeMapping TypeName="SUNEDUModel.CategoriaXCarrera">
+        <MappingFragment StoreEntitySet="CategoriaXCarrera">
+          <ScalarProperty Name="id_TipCarrera" ColumnName="id_TipCarrera" />
+          <ScalarProperty Name="id_Carrera" ColumnName="id_Carrera" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOCENTE">
+      <EntityTypeMapping TypeName="SUNEDUModel.DOCENTE">
+        <MappingFragment StoreEntitySet="DOCENTE">
+          <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido_Paterno" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido_Materno" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="DNI_CarnetExtranjeria" ColumnName="DNI_CarnetExtranjeria" />
+          <ScalarProperty Name="TiempoDocencia" ColumnName="TiempoDocencia" />
+          <ScalarProperty Name="id_TipDocente" ColumnName="id_TipDocente" />
+          <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocenteXSede">
+      <EntityTypeMapping TypeName="SUNEDUModel.DocenteXSede">
+        <MappingFragment StoreEntitySet="DocenteXSede">
+          <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+          <ScalarProperty Name="id_Sede" ColumnName="id_Sede" />
+          <ScalarProperty Name="TiempoEnSede" ColumnName="TiempoEnSede" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documento_Bolsa">
+      <EntityTypeMapping TypeName="SUNEDUModel.Documento_Bolsa">
+        <MappingFragment StoreEntitySet="Documento_Bolsa">
+          <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+          <ScalarProperty Name="DescripcionDocBolsa" ColumnName="DescripcionDocBolsa" />
+          <ScalarProperty Name="ArchivoBolsa" ColumnName="ArchivoBolsa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documento_Servicio">
+      <EntityTypeMapping TypeName="SUNEDUModel.Documento_Servicio">
+        <MappingFragment StoreEntitySet="Documento_Servicio">
+          <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+          <ScalarProperty Name="DescripcionDocServicio" ColumnName="DescripcionDocServicio" />
+          <ScalarProperty Name="ArchivoDocServ" ColumnName="ArchivoDocServ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documento_Transparencia">
+      <EntityTypeMapping TypeName="SUNEDUModel.Documento_Transparencia">
+        <MappingFragment StoreEntitySet="Documento_Transparencia">
+          <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+          <ScalarProperty Name="DescripcionDocTransp" ColumnName="DescripcionDocTransp" />
+          <ScalarProperty Name="ArchivoTransp" ColumnName="ArchivoTransp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documentos_Docente">
+      <EntityTypeMapping TypeName="SUNEDUModel.Documentos_Docente">
+        <MappingFragment StoreEntitySet="Documentos_Docente">
+          <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+          <ScalarProperty Name="DescripcionDoc" ColumnName="DescripcionDoc" />
+          <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documentos_Investigacion">
+      <EntityTypeMapping TypeName="SUNEDUModel.Documentos_Investigacion">
+        <MappingFragment StoreEntitySet="Documentos_Investigacion">
+          <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+          <ScalarProperty Name="DescripcionDocInvest" ColumnName="DescripcionDocInvest" />
+          <ScalarProperty Name="ArchivoDocInvest" ColumnName="ArchivoDocInvest" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documentos_Universidad">
+      <EntityTypeMapping TypeName="SUNEDUModel.Documentos_Universidad">
+        <MappingFragment StoreEntitySet="Documentos_Universidad">
+          <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+          <ScalarProperty Name="DescripcionDoc" ColumnName="DescripcionDoc" />
+          <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+          <ScalarProperty Name="FechaDocumento" ColumnName="FechaDocumento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FINANZAS">
+      <EntityTypeMapping TypeName="SUNEDUModel.FINANZAS">
+        <MappingFragment StoreEntitySet="FINANZAS">
+          <ScalarProperty Name="id_Finanzas" ColumnName="id_Finanzas" />
+          <ScalarProperty Name="NombreDocumentoFinanz" ColumnName="NombreDocumentoFinanz" />
+          <ScalarProperty Name="ArchivoFinanzas" ColumnName="ArchivoFinanzas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grado">
+      <EntityTypeMapping TypeName="SUNEDUModel.Grado">
+        <MappingFragment StoreEntitySet="Grado">
+          <ScalarProperty Name="id_Grado" ColumnName="id_Grado" />
+          <ScalarProperty Name="DescripcionGrado" ColumnName="DescripcionGrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grado_Docente">
+      <EntityTypeMapping TypeName="SUNEDUModel.Grado_Docente">
+        <MappingFragment StoreEntitySet="Grado_Docente">
+          <ScalarProperty Name="id_Grado" ColumnName="id_Grado" />
+          <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+          <ScalarProperty Name="ObservacionesGrad" ColumnName="ObservacionesGrad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INVESTIGACION">
+      <EntityTypeMapping TypeName="SUNEDUModel.INVESTIGACION">
+        <MappingFragment StoreEntitySet="INVESTIGACION">
+          <ScalarProperty Name="id_Investigación" ColumnName="id_Investigación" />
+          <ScalarProperty Name="DescripcionInv" ColumnName="DescripcionInv" />
+          <ScalarProperty Name="Id_Proyecto" ColumnName="Id_Proyecto" />
+          <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvestigacionXDocente">
+      <EntityTypeMapping TypeName="SUNEDUModel.InvestigacionXDocente">
+        <MappingFragment StoreEntitySet="InvestigacionXDocente">
+          <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+          <ScalarProperty Name="id_Investigación" ColumnName="id_Investigación" />
+          <ScalarProperty Name="EstadoInvestigacion" ColumnName="EstadoInvestigacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Localidad">
+      <EntityTypeMapping TypeName="SUNEDUModel.Localidad">
+        <MappingFragment StoreEntitySet="Localidad">
+          <ScalarProperty Name="id_localidad" ColumnName="id_localidad" />
+          <ScalarProperty Name="DescripcionLocalidad" ColumnName="DescripcionLocalidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modalidad_Creacion">
+      <EntityTypeMapping TypeName="SUNEDUModel.Modalidad_Creacion">
+        <MappingFragment StoreEntitySet="Modalidad_Creacion">
+          <ScalarProperty Name="id_ModCreacion" ColumnName="id_ModCreacion" />
+          <ScalarProperty Name="DescripcionModalidad" ColumnName="DescripcionModalidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Periodo_Academico">
+      <EntityTypeMapping TypeName="SUNEDUModel.Periodo_Academico">
+        <MappingFragment StoreEntitySet="Periodo_Academico">
+          <ScalarProperty Name="id_PerAcademico" ColumnName="id_PerAcademico" />
+          <ScalarProperty Name="DescripcionPerAcad" ColumnName="DescripcionPerAcad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROGRAMA">
+      <EntityTypeMapping TypeName="SUNEDUModel.PROGRAMA">
+        <MappingFragment StoreEntitySet="PROGRAMA">
+          <ScalarProperty Name="id_Programa" ColumnName="id_Programa" />
+          <ScalarProperty Name="NombrePrograma" ColumnName="NombrePrograma" />
+          <ScalarProperty Name="id_PerAcademico" ColumnName="id_PerAcademico" />
+          <ScalarProperty Name="FechaCreacionProg" ColumnName="FechaCreacionProg" />
+          <ScalarProperty Name="CodigoPrograma" ColumnName="CodigoPrograma" />
+          <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgramasXCarrera">
+      <EntityTypeMapping TypeName="SUNEDUModel.ProgramasXCarrera">
+        <MappingFragment StoreEntitySet="ProgramasXCarrera">
+          <ScalarProperty Name="id_Carrera" ColumnName="id_Carrera" />
+          <ScalarProperty Name="id_Programa" ColumnName="id_Programa" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgramaXSede">
+      <EntityTypeMapping TypeName="SUNEDUModel.ProgramaXSede">
+        <MappingFragment StoreEntitySet="ProgramaXSede">
+          <ScalarProperty Name="id_Sede" ColumnName="id_Sede" />
+          <ScalarProperty Name="id_Programa" ColumnName="id_Programa" />
+          <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+          <ScalarProperty Name="ObservacionesProgXSed" ColumnName="ObservacionesProgXSed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proyectos">
+      <EntityTypeMapping TypeName="SUNEDUModel.Proyectos">
+        <MappingFragment StoreEntitySet="Proyectos">
+          <ScalarProperty Name="Id_Proyecto" ColumnName="Id_Proyecto" />
+          <ScalarProperty Name="DescripciónProy" ColumnName="DescripciónProy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEDE">
+      <EntityTypeMapping TypeName="SUNEDUModel.SEDE">
+        <MappingFragment StoreEntitySet="SEDE">
+          <ScalarProperty Name="id_Sede" ColumnName="id_Sede" />
+          <ScalarProperty Name="id_SedeCentral" ColumnName="id_SedeCentral" />
+          <ScalarProperty Name="id_localidad" ColumnName="id_localidad" />
+          <ScalarProperty Name="NombreSede" ColumnName="NombreSede" />
+          <ScalarProperty Name="CantidadLaboratorios" ColumnName="CantidadLaboratorios" />
+          <ScalarProperty Name="CantidadTalleres" ColumnName="CantidadTalleres" />
+          <ScalarProperty Name="CantidadAmbientesParaDocentes" ColumnName="CantidadAmbientesParaDocentes" />
+          <ScalarProperty Name="CantidadAulas" ColumnName="CantidadAulas" />
+          <ScalarProperty Name="CantidadBibliotecas" ColumnName="CantidadBibliotecas" />
+          <ScalarProperty Name="CantidadAuditorio" ColumnName="CantidadAuditorio" />
+          <ScalarProperty Name="CantidadCanchasDeportivas" ColumnName="CantidadCanchasDeportivas" />
+          <ScalarProperty Name="CantidadSalasEstudio" ColumnName="CantidadSalasEstudio" />
+          <ScalarProperty Name="CantidadSalasInvest" ColumnName="CantidadSalasInvest" />
+          <ScalarProperty Name="CantidadAcervoBibliog" ColumnName="CantidadAcervoBibliog" />
+          <ScalarProperty Name="Jerarquia" ColumnName="Jerarquia" />
+          <ScalarProperty Name="FechaPrimerPA" ColumnName="FechaPrimerPA" />
+          <ScalarProperty Name="CantidadEstudiantes" ColumnName="CantidadEstudiantes" />
+          <ScalarProperty Name="NombreFacultad" ColumnName="NombreFacultad" />
+          <ScalarProperty Name="NumeroLocal" ColumnName="NumeroLocal" />
+          <ScalarProperty Name="CodigoLocal" ColumnName="CodigoLocal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICIOS_COMPLEMENTARIOS">
+      <EntityTypeMapping TypeName="SUNEDUModel.SERVICIOS_COMPLEMENTARIOS">
+        <MappingFragment StoreEntitySet="SERVICIOS_COMPLEMENTARIOS">
+          <ScalarProperty Name="id_Servicios" ColumnName="id_Servicios" />
+          <ScalarProperty Name="DescripcionServicio" ColumnName="DescripcionServicio" />
+          <ScalarProperty Name="NumeroDeServicios" ColumnName="NumeroDeServicios" />
+          <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tip_Grado">
+      <EntityTypeMapping TypeName="SUNEDUModel.Tip_Grado">
+        <MappingFragment StoreEntitySet="Tip_Grado">
+          <ScalarProperty Name="id_TipDocente" ColumnName="id_TipDocente" />
+          <ScalarProperty Name="ObsTipGrado" ColumnName="ObsTipGrado" />
+          <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+          <ScalarProperty Name="id_Grado" ColumnName="id_Grado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Categoria">
+      <EntityTypeMapping TypeName="SUNEDUModel.Tipo_Categoria">
+        <MappingFragment StoreEntitySet="Tipo_Categoria">
+          <ScalarProperty Name="id_TipCarrera" ColumnName="id_TipCarrera" />
+          <ScalarProperty Name="DescripcionTipCarrera" ColumnName="DescripcionTipCarrera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Docente">
+      <EntityTypeMapping TypeName="SUNEDUModel.Tipo_Docente">
+        <MappingFragment StoreEntitySet="Tipo_Docente">
+          <ScalarProperty Name="id_TipDocente" ColumnName="id_TipDocente" />
+          <ScalarProperty Name="DescripcionTipo" ColumnName="DescripcionTipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoGestion">
+      <EntityTypeMapping TypeName="SUNEDUModel.TipoGestion">
+        <MappingFragment StoreEntitySet="TipoGestion">
+          <ScalarProperty Name="id_Gestion" ColumnName="id_Gestion" />
+          <ScalarProperty Name="DescripcionGestion" ColumnName="DescripcionGestion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSPARENCIA">
+      <EntityTypeMapping TypeName="SUNEDUModel.TRANSPARENCIA">
+        <MappingFragment StoreEntitySet="TRANSPARENCIA">
+          <ScalarProperty Name="id_Transparencia" ColumnName="id_Transparencia" />
+          <ScalarProperty Name="PortalWeb" ColumnName="PortalWeb" />
+          <ScalarProperty Name="Mision" ColumnName="Mision" />
+          <ScalarProperty Name="Vision" ColumnName="Vision" />
+          <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UNIVERSIDAD">
+      <EntityTypeMapping TypeName="SUNEDUModel.UNIVERSIDAD">
+        <MappingFragment StoreEntitySet="UNIVERSIDAD">
+          <ScalarProperty Name="id_Universidad" ColumnName="id_Universidad" />
+          <ScalarProperty Name="id_Acceso" ColumnName="id_Acceso" />
+          <ScalarProperty Name="id_Investigación" ColumnName="id_Investigación" />
+          <ScalarProperty Name="id_Docente" ColumnName="id_Docente" />
+          <ScalarProperty Name="id_Programa" ColumnName="id_Programa" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="NRuc" ColumnName="NRuc" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="id_Documento" ColumnName="id_Documento" />
+          <ScalarProperty Name="id_Autorizacion" ColumnName="id_Autorizacion" />
+          <ScalarProperty Name="id_Gestion" ColumnName="id_Gestion" />
+          <ScalarProperty Name="id_ModCreacion" ColumnName="id_ModCreacion" />
+          <ScalarProperty Name="id_Sede" ColumnName="id_Sede" />
+          <ScalarProperty Name="id_Servicios" ColumnName="id_Servicios" />
+          <ScalarProperty Name="id_Bolsa" ColumnName="id_Bolsa" />
+          <ScalarProperty Name="id_Transparencia" ColumnName="id_Transparencia" />
+          <ScalarProperty Name="id_Finanzas" ColumnName="id_Finanzas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
