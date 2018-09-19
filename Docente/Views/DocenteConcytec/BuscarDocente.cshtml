@@ -1,0 +1,16 @@
+﻿@model Docente.Models.DOCENTES_CONCYTEC
+@{
+    ViewBag.Title = "Busqueda Docente";
+}
+
+<h2>Busqueda Docente</h2>
+@using(Html.BeginForm())
+{
+    <div>
+        <div>DNI:</div>
+        <div>@Html.EditorFor(model => model.DNI_Carnet)</div>
+    </div>
+    <input type="submit" value="Buscar"/>
+}
+
+

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="CONCYTECModelStoreContainer" CdmEntityContainer="Concytec">
+  <EntityContainerMapping StorageEntityContainer="CONCYTECModelStoreContainer" CdmEntityContainer="CONCYTECEntities">
     <EntitySetMapping Name="DOCENTES_CONCYTEC">
       <EntityTypeMapping TypeName="CONCYTECModel.DOCENTES_CONCYTEC">
         <MappingFragment StoreEntitySet="DOCENTES_CONCYTEC">

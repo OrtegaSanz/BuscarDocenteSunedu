@@ -156,31 +156,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DocenteController.cs" />
+    <Compile Include="Controllers\DocenteConcytecController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ACCESO.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Autorizacion.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BOLSA_TRABAJO.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Carrera.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Categoria.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CategoriaXCarrera.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Categoria_Docentes.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CONCYTEC.Context.cs">
       <AutoGen>True</AutoGen>
@@ -197,32 +176,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CONCYTEC.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\DOCENTE.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\DOCENTES_CONCYTEC.cs">
       <DependentUpon>CONCYTEC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DocenteXSede.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Documentos_Docente.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Documentos_Investigacion.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Documentos_Universidad.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Documento_Bolsa.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Documento_Servicio.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Documento_Transparencia.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Experiencia.cs">
       <DependentUpon>CONCYTEC.tt</DependentUpon>
@@ -230,83 +185,8 @@
     <Compile Include="Models\ExperienciaXDocente.cs">
       <DependentUpon>CONCYTEC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FINANZAS.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Grado.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Grado_Docente.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\INVESTIGACION.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\InvestigacionXDocente.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Localidad.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Modalidad_Creacion.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Periodo_Academico.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PROGRAMA.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProgramasXCarrera.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProgramaXSede.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Proyectos.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SEDE.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SERVICIOS_COMPLEMENTARIOS.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Sunedu.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Sunedu.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Sunedu.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Sunedu.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Sunedu.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TipoGestion.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Tipo_Categoria.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Tipo_DocConcytec.cs">
       <DependentUpon>CONCYTEC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Tipo_Docente.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Tip_Grado.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TRANSPARENCIA.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UNIVERSIDAD.cs">
-      <DependentUpon>Sunedu.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -329,27 +209,10 @@
       <DependentUpon>CONCYTEC.edmx</DependentUpon>
       <LastGenOutput>CONCYTEC.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Sunedu.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Sunedu.edmx</DependentUpon>
-      <LastGenOutput>Sunedu.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Sunedu.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Sunedu.edmx</DependentUpon>
-      <LastGenOutput>Sunedu.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="Models\Sunedu.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Sunedu.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Sunedu.edmx.diagram">
-      <DependentUpon>Sunedu.edmx</DependentUpon>
     </Content>
     <EntityDeploy Include="Models\CONCYTEC.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -383,8 +246,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Docente\Docente.cshtml" />
-    <Content Include="Views\Docente\ResultadoBusqueda.cshtml" />
+    <Content Include="Views\DocenteConcytec\BuscarDocente.cshtml" />
+    <Content Include="Views\DocenteConcytec\Resultado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

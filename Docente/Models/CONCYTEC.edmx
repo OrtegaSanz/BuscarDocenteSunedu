@@ -43,7 +43,7 @@
           <Property Name="id_TipDocCon" Type="int" Nullable="false" />
           <Property Name="DescripcionTipCon" Type="varchar" MaxLength="225" />
         </EntityType>
-        <Association Name="FK__DOCENTES___id_Ti__29572725">
+        <Association Name="FK__DOCENTES___id_Ti__164452B1">
           <End Role="Tipo_DocConcytec" Type="Self.Tipo_DocConcytec" Multiplicity="1" />
           <End Role="DOCENTES_CONCYTEC" Type="Self.DOCENTES_CONCYTEC" Multiplicity="*" />
           <ReferentialConstraint>
@@ -55,7 +55,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Experienc__id_Do__2A4B4B5E">
+        <Association Name="FK__Experienc__id_Do__173876EA">
           <End Role="DOCENTES_CONCYTEC" Type="Self.DOCENTES_CONCYTEC" Multiplicity="1" />
           <End Role="ExperienciaXDocente" Type="Self.ExperienciaXDocente" Multiplicity="*" />
           <ReferentialConstraint>
@@ -67,7 +67,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Experienc__id_Ex__2B3F6F97">
+        <Association Name="FK__Experienc__id_Ex__182C9B23">
           <End Role="Experiencia" Type="Self.Experiencia" Multiplicity="1" />
           <End Role="ExperienciaXDocente" Type="Self.ExperienciaXDocente" Multiplicity="*" />
           <ReferentialConstraint>
@@ -84,15 +84,15 @@
           <EntitySet Name="Experiencia" EntityType="Self.Experiencia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExperienciaXDocente" EntityType="Self.ExperienciaXDocente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tipo_DocConcytec" EntityType="Self.Tipo_DocConcytec" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__DOCENTES___id_Ti__29572725" Association="Self.FK__DOCENTES___id_Ti__29572725">
+          <AssociationSet Name="FK__DOCENTES___id_Ti__164452B1" Association="Self.FK__DOCENTES___id_Ti__164452B1">
             <End Role="Tipo_DocConcytec" EntitySet="Tipo_DocConcytec" />
             <End Role="DOCENTES_CONCYTEC" EntitySet="DOCENTES_CONCYTEC" />
           </AssociationSet>
-          <AssociationSet Name="FK__Experienc__id_Do__2A4B4B5E" Association="Self.FK__Experienc__id_Do__2A4B4B5E">
+          <AssociationSet Name="FK__Experienc__id_Do__173876EA" Association="Self.FK__Experienc__id_Do__173876EA">
             <End Role="DOCENTES_CONCYTEC" EntitySet="DOCENTES_CONCYTEC" />
             <End Role="ExperienciaXDocente" EntitySet="ExperienciaXDocente" />
           </AssociationSet>
-          <AssociationSet Name="FK__Experienc__id_Ex__2B3F6F97" Association="Self.FK__Experienc__id_Ex__2B3F6F97">
+          <AssociationSet Name="FK__Experienc__id_Ex__182C9B23" Association="Self.FK__Experienc__id_Ex__182C9B23">
             <End Role="Experiencia" EntitySet="Experiencia" />
             <End Role="ExperienciaXDocente" EntitySet="ExperienciaXDocente" />
           </AssociationSet>
@@ -113,8 +113,8 @@
           <Property Name="Nacionalidad" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
           <Property Name="DNI_Carnet" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
           <Property Name="id_TipDocCon" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Tipo_DocConcytec" Relationship="Self.FK__DOCENTES___id_Ti__29572725" FromRole="DOCENTES_CONCYTEC" ToRole="Tipo_DocConcytec" />
-          <NavigationProperty Name="ExperienciaXDocente" Relationship="Self.FK__Experienc__id_Do__2A4B4B5E" FromRole="DOCENTES_CONCYTEC" ToRole="ExperienciaXDocente" />
+          <NavigationProperty Name="Tipo_DocConcytec" Relationship="Self.FK__DOCENTES___id_Ti__164452B1" FromRole="DOCENTES_CONCYTEC" ToRole="Tipo_DocConcytec" />
+          <NavigationProperty Name="ExperienciaXDocente" Relationship="Self.FK__Experienc__id_Do__173876EA" FromRole="DOCENTES_CONCYTEC" ToRole="ExperienciaXDocente" />
         </EntityType>
         <EntityType Name="Experiencia">
           <Key>
@@ -122,7 +122,7 @@
           </Key>
           <Property Name="id_Experiencia" Type="Int32" Nullable="false" />
           <Property Name="DescripcionExp" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ExperienciaXDocente" Relationship="Self.FK__Experienc__id_Ex__2B3F6F97" FromRole="Experiencia" ToRole="ExperienciaXDocente" />
+          <NavigationProperty Name="ExperienciaXDocente" Relationship="Self.FK__Experienc__id_Ex__182C9B23" FromRole="Experiencia" ToRole="ExperienciaXDocente" />
         </EntityType>
         <EntityType Name="ExperienciaXDocente">
           <Key>
@@ -135,8 +135,8 @@
           <Property Name="Experiencia2" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
           <Property Name="Experiencia3" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
           <Property Name="Experiencia4" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="DOCENTES_CONCYTEC" Relationship="Self.FK__Experienc__id_Do__2A4B4B5E" FromRole="ExperienciaXDocente" ToRole="DOCENTES_CONCYTEC" />
-          <NavigationProperty Name="Experiencia" Relationship="Self.FK__Experienc__id_Ex__2B3F6F97" FromRole="ExperienciaXDocente" ToRole="Experiencia" />
+          <NavigationProperty Name="DOCENTES_CONCYTEC" Relationship="Self.FK__Experienc__id_Do__173876EA" FromRole="ExperienciaXDocente" ToRole="DOCENTES_CONCYTEC" />
+          <NavigationProperty Name="Experiencia" Relationship="Self.FK__Experienc__id_Ex__182C9B23" FromRole="ExperienciaXDocente" ToRole="Experiencia" />
         </EntityType>
         <EntityType Name="Tipo_DocConcytec">
           <Key>
@@ -144,9 +144,9 @@
           </Key>
           <Property Name="id_TipDocCon" Type="Int32" Nullable="false" />
           <Property Name="DescripcionTipCon" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="DOCENTES_CONCYTEC" Relationship="Self.FK__DOCENTES___id_Ti__29572725" FromRole="Tipo_DocConcytec" ToRole="DOCENTES_CONCYTEC" />
+          <NavigationProperty Name="DOCENTES_CONCYTEC" Relationship="Self.FK__DOCENTES___id_Ti__164452B1" FromRole="Tipo_DocConcytec" ToRole="DOCENTES_CONCYTEC" />
         </EntityType>
-        <Association Name="FK__DOCENTES___id_Ti__29572725">
+        <Association Name="FK__DOCENTES___id_Ti__164452B1">
           <End Role="Tipo_DocConcytec" Type="Self.Tipo_DocConcytec" Multiplicity="1" />
           <End Role="DOCENTES_CONCYTEC" Type="Self.DOCENTES_CONCYTEC" Multiplicity="*" />
           <ReferentialConstraint>
@@ -158,7 +158,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Experienc__id_Do__2A4B4B5E">
+        <Association Name="FK__Experienc__id_Do__173876EA">
           <End Role="DOCENTES_CONCYTEC" Type="Self.DOCENTES_CONCYTEC" Multiplicity="1" />
           <End Role="ExperienciaXDocente" Type="Self.ExperienciaXDocente" Multiplicity="*" />
           <ReferentialConstraint>
@@ -170,7 +170,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Experienc__id_Ex__2B3F6F97">
+        <Association Name="FK__Experienc__id_Ex__182C9B23">
           <End Role="Experiencia" Type="Self.Experiencia" Multiplicity="1" />
           <End Role="ExperienciaXDocente" Type="Self.ExperienciaXDocente" Multiplicity="*" />
           <ReferentialConstraint>
@@ -182,20 +182,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Concytec" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CONCYTECEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="DOCENTES_CONCYTEC" EntityType="Self.DOCENTES_CONCYTEC" />
           <EntitySet Name="Experiencia" EntityType="Self.Experiencia" />
           <EntitySet Name="ExperienciaXDocente" EntityType="Self.ExperienciaXDocente" />
           <EntitySet Name="Tipo_DocConcytec" EntityType="Self.Tipo_DocConcytec" />
-          <AssociationSet Name="FK__DOCENTES___id_Ti__29572725" Association="Self.FK__DOCENTES___id_Ti__29572725">
+          <AssociationSet Name="FK__DOCENTES___id_Ti__164452B1" Association="Self.FK__DOCENTES___id_Ti__164452B1">
             <End Role="Tipo_DocConcytec" EntitySet="Tipo_DocConcytec" />
             <End Role="DOCENTES_CONCYTEC" EntitySet="DOCENTES_CONCYTEC" />
           </AssociationSet>
-          <AssociationSet Name="FK__Experienc__id_Do__2A4B4B5E" Association="Self.FK__Experienc__id_Do__2A4B4B5E">
+          <AssociationSet Name="FK__Experienc__id_Do__173876EA" Association="Self.FK__Experienc__id_Do__173876EA">
             <End Role="DOCENTES_CONCYTEC" EntitySet="DOCENTES_CONCYTEC" />
             <End Role="ExperienciaXDocente" EntitySet="ExperienciaXDocente" />
           </AssociationSet>
-          <AssociationSet Name="FK__Experienc__id_Ex__2B3F6F97" Association="Self.FK__Experienc__id_Ex__2B3F6F97">
+          <AssociationSet Name="FK__Experienc__id_Ex__182C9B23" Association="Self.FK__Experienc__id_Ex__182C9B23">
             <End Role="Experiencia" EntitySet="Experiencia" />
             <End Role="ExperienciaXDocente" EntitySet="ExperienciaXDocente" />
           </AssociationSet>
@@ -205,7 +205,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CONCYTECModelStoreContainer" CdmEntityContainer="Concytec">
+        <EntityContainerMapping StorageEntityContainer="CONCYTECModelStoreContainer" CdmEntityContainer="CONCYTECEntities">
           <EntitySetMapping Name="DOCENTES_CONCYTEC">
             <EntityTypeMapping TypeName="CONCYTECModel.DOCENTES_CONCYTEC">
               <MappingFragment StoreEntitySet="DOCENTES_CONCYTEC">
@@ -264,7 +264,7 @@
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
