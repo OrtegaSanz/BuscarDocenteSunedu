@@ -8,9 +8,15 @@
 {
     <div>
         <div>DNI:</div>
-        <div>@Html.EditorFor(model => model.DNI_Carnet)</div>
+        <div>@Html.TextBox("txtDNI")</div>
     </div>
     <input type="submit" value="Buscar"/>
+    <div>
+        <div>Nombre:</div>
+        <div>@ViewData["Nombre"]</div>
+        <div>Apellido Paterno:</div>
+        <div>@ViewData["ApePaterno"]</div>
+    </div>
 }
 
 

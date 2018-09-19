@@ -10,22 +10,17 @@ namespace Docente.Controllers
     public class DocenteConcytecController : Controller
     {
         private CONCYTECEntities db = new CONCYTECEntities();
+        string dni = "";
         //public string connectionString = @"Data Source=192.168.1.200\SQLSERVER;Initial Catalog=CONCYTEC;Persist Security Info=True;User ID=Chucktesta;Password=12345";
         // GET: DocenteConcytec
         public ActionResult BuscarDocente()
         {
             return View();
         }
-        private string dni { get; set; }
         [HttpPost]
         public ActionResult BuscarDocente(DOCENTES_CONCYTEC Docentes)
         {
             dni = Request["txtDNI"];
-            return RedirectToAction("Resultado");
-        }
-
-        public ActionResult Resultado(DOCENTES_CONCYTEC Docentes)
-        {
             foreach (DOCENTES_CONCYTEC e in db.DOCENTES_CONCYTEC.ToList())
             {
                 if (e.DNI_Carnet == dni)
@@ -34,9 +29,26 @@ namespace Docente.Controllers
                     Docentes.ApellidoPaterno = e.ApellidoPaterno;
                 }
             }
-            ViewData["Nombres"] = Docentes.Nombres;
-            ViewData["ApellidoPaterno"] = Docentes.ApellidoPaterno;
+            ViewData["Nombre"] = Docentes.Nombres;
+            ViewData["ApePaterno"] = Docentes.ApellidoPaterno;
+            //return RedirectToAction("Resultado");
             return View();
         }
+
+        /*public ActionResult Resultado(DOCENTES_CONCYTEC Docentes)
+        {
+            string nombre ="", apePaterno = "";
+            foreach (DOCENTES_CONCYTEC e in db.DOCENTES_CONCYTEC.ToList())
+            {
+                if (e.DNI_Carnet == dni)
+                {
+                    nombre = e.Nombres;
+                    apePaterno = e.ApellidoPaterno;
+                }
+            }
+            ViewData["Nombres"] = dni;//Docentes.Nombres;
+            //ViewData["ApellidoPaterno"] = apePaterno ;//Docentes.ApellidoPaterno;
+            return View();
+        }*/
     }
 }
